@@ -1,182 +1,746 @@
-<html lang="en"> <!--language-->
-    <!--That is not seen in the webpage but read by browsers and view on the navigation bar-->
+<!DOCTYPE html>
+<html lang="en">
     <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="stylesheet" href="styles.css" />
-      <title>Community Survey Form</title>
-    </head>
-    <!--body contain contents here that are visible and main/fist part of webpage-->
-    <body>
+       <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>My Personal Portfolio</title>
+      <!-- Load Tailwind CSS CDN for styling -->
+      <script src="https://cdn.tailwindcss.com"></script>
     
-        <header class="header">
-          <h1 id="title">Community Survey Form</h1> <!--heading-->
-          <p id="description"><em>Thank you for taking the time to help us,<br>we appreciate your time and insights.</em> 
-          </p>
-        </header>
-        <!--html survey form  viewer/user boilerplate-->
-       <form id="survey-form">
-          <div class="form-group">
-            <label id="name-label" for="name">Name</label>
-            <input
-             type="text"
-             name="name"
-             id="name"
-             class="form-control"
-             placeholder="Your name..."
-             required/> 
-          </div>
-          <div class="form-group">
-             <label id="email-label" for="email">Email</label>
-             <input
-             type="email"
-             name="email"
-             id="email"
-             class="form-control"
-             placeholder="Your email..."
-             required/>
-          </div>
-            <div class="form-group">
-             <label id="number-label" for="number">Age<span class="Clue">(optional)</span></label>
-             <input
-             type="number"
-             name="age"
-             id="number"
-             min="12"
-             max="120"
-             class="form-control"
-             placeholder="e.g., 25"/>
+      <!-- Load Font Awesome 6.x CDN for icons (MANDATORY for social icons) -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJc5wF5T7wJ9Z9R5zN/M0Ew3C6e5P5zR5e5zC6p5zN5w5zC5w5zN5w5zC5w5zN5w5zC5w5zN5w5zC5w5zN5w5zC5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+       <!-- Load Font Awesome for Social Icons (v6) -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJ/cn/7oWqVmhvLgSSf3mQyK4x+jH6SITpYl8x+d9k1q5wVwK+y5F2Q+D4k5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJ/cnVf/z5h6sPFv0RkL0Q4pS3rD5K9gP6aGq3b0hT4F2Bv4Wl/XwX6w/Yn5Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <link rel="stylesheet" href="styles.css">
+    
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+     <style>
+        /* Custom Styles for Base Colors and Effects */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+        
+
+        /* --- Theme Variables --- */
+        
+        /* Light mode */
+        
+
+        /* Dark mode */
+        .dark {
+            --bg-start: #0f172a; /* Slate-900 */
+            --bg-end: #1e293b;   /* Slate-800 */
+            --card-bg: rgba(30, 41, 59, 0.75); /* Dark Transparent */
+            --text-color: #f3f4f6;
+            --primary-color: #60a5fa;
+            --input-bg: rgba(45, 55, 72, 0.6);
+        }
+
+        /* --- Custom Element Styles --- */
+
+        /* Gradient background that shifts based on theme */
+        .bg-theme-gradient {
+            background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-end) 100%);
+            transition: all ease-in-out 0.3s linear;
+        }
+
+        /* Glassmorphism Card Style */
+        .glass-card {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px); /* Strong blur */
+            -webkit-backdrop-filter: blur(15px);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            transition: background-color 0.8s, border 0.8s, box-shadow 0.8s;
+        }
+        
+        /* Social Icon Hover Effect */
+        .social-icon {
+            transition: all 0.3s ease-in-out;
+            text-shadow: 0 0 5px var(--primary-color);
+        }
+        .social-icon:hover {
+            transform: translateY(-3px) scale(1.2);
+            color: var(--primary-color) !important;
+            text-shadow: 0 0 10px var(--primary-color);
+        }
+
+          /* Light Glassmorphism Effect for Cards */
+        .cert-card {
+            background-color: rgba(255, 255, 255, 0.08); /* Light transparent background */
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.15); /* Subtle border */
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-6px); /* Pronounced lift effect */
+            box-shadow: 0 12px 25px rgba(115, 241, 147, 0.25); /* Lime Green glow shadow */
+            border-color: rgba(162, 237, 181, 0.4);
+        }
+        
+        /* Custom badge styling - Lime Green/Yellow */
+        .badge-icon {
+            color: #09cde3; /* Lime green */
+            text-shadow: 0 0px 5px rgba(136, 161, 185, 0.8);
+        }
+    </style>
+    </head>
+
+    <body>
+        <!-- This navigation bar will stay fixed at the top of the viewport -->
+       <header><nav id="navbar" class="menu">
+          <ul class="nav-list">
+            <!-- Navigation links to different sections of the page -->
+            <li><a href="https://codminer.github.io/Codmine-Webpage/" target="_blank" id="profile-link" class="nav-link">Portfolio</a></li>
+            <li><a href="#welcome-section" class="nav-link">Home</a></li>
+            <li><a href="#About" class="nav-link">About</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#Credentials" class="nav-link">Credentials</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#Contact" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+    </header>
+        <!-- This section will take up the full height of the viewport -->
+    <main class="main-container">
+
+       <section id="welcome-section">
+            <div id="Portfolio">
+                  <div class="hero-section">
+                  </div>
+                  <div id="circular-icon-container">
+                  </div>
+                  <h1><div class="intro"><span>H</span><span>e</span><span>l</span><span>l</span><span>o</span><span>!</span></div></h1><br>
+                  <p class="name">I'am<div class="owner"><span>C</spain><span>o</span><span>d</span><span>m</span><span>i
+                  </span><span>n</span><span>e</span><span>r</span></div></p>
+                    <div class="role">
+                     <div class="static-text">A</div><ul class ="dynamic-text">
+                     <li><span>Developer</span></li>   
+                     <li><span>Designer</span></li> 
+                     <li><span>Creator</span></li> 
+                     <li><span>Freelancer</span></li> 
+                      </ul>
+                    </div>   
+            </div>  
+       </section>
+    
+        <section id="About" 
+        class="w-full max-w-4xl bg-gray-750/80 p-6 sm:p-10 lg:p-16 rounded-xl transition-all duration-300 azure-glow">
+        
+        <!-- Header Block -->
+        <div class="text-center mb-10 sm:mb-14">
+            <!-- H2: Sub-role and focus -->
+            <h2 class="mt-3 text-3xl sm:text-3xl text-azure-600 font-bold">
+                Digital Craftsperson & UX Advocate.
+            </h2>
+        </div>
+
+        <!-- Unique Quotation/Philosophy Block (p elements) -->
+        <div class="space-y-8">
+            
+            <!-- Unique block quote style P element -->
+            <blockquote class="relative border-l-8 border-cyan-500 pl-6 sm:pl-8 py-2">
+                <p class="text-1xl sm:text-2xl font-extralight italic text-gray-200">
+                    "I build what users touch. That requires more than just code; it demands deep proficiency in **HTML, CSS, and JavaScript** to guarantee performance, accessibility, and pixel precision."
+                </p>
+            </blockquote>
+
+            <!-- Supporting P element -->
+            <p class="text-lg text-gray-400 leading-relaxed max-w-3xl mx-auto">
+                My commitment is to efficient, reusable code. I translate complex user stories into fluid, responsive experiences, relying on modern tooling like **React, Tailwind, and Vite** to maximize development velocity without sacrificing stability.
+            </p>
+        </div>
+
+        <!-- Core Competencies (h and p elements) -->
+        <div class="mt-12 pt-8 border-t border-gray-700">
+            <h3 class="text-xl font-bold text-gray-100 mb-4 text-center uppercase tracking-wider">
+                Key Deliverables
+            </h3>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+                
+                <!-- Deliverable 1 -->
+                <div class="p-4 rounded-lg bg-gray-800/70 hover:bg-gray-700/80 transition duration-300 border border-gray-700">
+                    <h3 class="text-lg font-semibold text-cyan-400">Fluid Layouts</h3>
+                    <p class="text-sm text-gray-400 mt-1">
+                        Adaptive design for every viewport.
+                    </p>
+                </div>
+                
+                <!-- Deliverable 2 -->
+                <div class="p-4 rounded-lg bg-gray-800/70 hover:bg-gray-700/80 transition duration-300 border border-gray-700">
+                    <h3 class="text-lg font-semibold text-cyan-400">Optimized Performance</h3>
+                    <p class="text-sm text-gray-400 mt-1">
+                        Sub-second load times and smooth transitions.
+                    </p>
+                </div>
+
+                <!-- Deliverable 3 -->
+                <div class="p-4 rounded-lg bg-gray-800/70 hover:bg-gray-700/80 transition duration-300 border border-gray-700">
+                    <h3 class="text-lg font-semibold text-cyan-400">Accessibility (A11y)</h3>
+                    <p class="text-sm text-gray-400 mt-1">
+                        Inclusive design for all users.
+                    </p>
+                </div>
             </div>
-           <div class="form-group">
-               <p>Which option best describes your current profession?</p>
-               <label for="dropdown">
-               <select id="dropdown" name="role" class="form-control" required>
-               <option disabled selected value><span class="select">Select one...</span></option>
-               <option value="student">Student</option>
-               <option value="job">Full Time Job</option>
-               <option value="job">Part Time Job</option>
-               <option value="self">Self Employed </option>
-                <option value="unemployed">Unemployed</option>
-                <option value="other">Other</option>
-               <option value="preferNo">Prefer not to say</option>
-               </select>
-               </label>
-              </div>
-              <div class="form-group">
-               <p>Would you recommend open source learning to a friend?</p>
-               <!--radio button-->
-               <label for="definitely">
-               <input id="definitely"
-               name="user-recommend"
-               value="definitely"
-               type="radio"
-               class="input-radio"
-               checked/>Definitely</label>
+        </div>
+       </section>
+       
+      <section id="skills" class="skills-section">
+      <h2>My Core Frontend Skills</h2>
+    
+      <div class="skills-grid-container">
+        
+        <div class="skill-category">
+            <h3>&#9733; Core Languages</h3>
+            <div class="skills-container">
+                
+                <div class="skill-card" data-delay="1">
+                    <i class="fab fa-html5 skill-icon"></i>
+                    <h4>HTML5</h4>
+                    <p>Semantic structure, accessibility standards, and modern APIs.</p>
+                </div>
+                
+                <div class="skill-card" data-delay="2">
+                    <i class="fab fa-css3-alt skill-icon"></i>
+                    <h4>CSS3</h4>
+                    <p>Flexbox, Grid, custom properties (variables), and complex animations.</p>
+                </div>
+                
+                <div class="skill-card" data-delay="3">
+                    <i class="fab fa-js-square skill-icon"></i>
+                    <h4>JavaScript (ES6+)</h4>
+                    <p>DOM manipulation, asynchronous programming (Promises, Async/Await).</p>
+                </div>
+            </div>
+        </div>
 
-               <label for="maybe">
-               <input id="maybe"
-               name="user-recommend"
-               value="maybe"
-               type="radio"
-               class="input-radio"/>Maybe</label>
+        <div class="skill-category">
+            <h3>&#9733; Frameworks & Libraries</h3>
+            <div class="skills-container">
+                
+                <div class="skill-card" data-delay="4">
+                    <i class="fab fa-react skill-icon"></i>
+                    <h4>React</h4>
+                    <p>Component-based architecture, Hooks, Context API, and state management.</p>
+                </div>
+                
+                <div class="skill-card" data-delay="5">
+                    <i class="fab fa-vuejs skill-icon"></i>
+                    <h4>Vue.js</h4>
+                    <p>Reactivity system, Vue Router, and composition API.</p>
+                </div>
 
-               <label for="not-sure">
-               <input id="not-sure"
-               name="user-recommend"
-               value="not-sure"
-               type="radio"
-               class="input-radio"/>Not sure
-               </label>
-              </div>
-          
-           <div class="form-group">
-            <p>What is your favorite feature of open source learning?</p>
-            <label for="most-like">
-            <select id="most-like" name="mostLike" class="form-control" required>
-            <option disabled selected value><span class="select">Select one...</span></option>
-            <option value="openSource">Open Source</option>
-            <option value="projects">Projects</option>
-            <option value="community">Community</option>
-            <option value="challenges">Challenges</option>
-            </select>
-            </label>
+                <div class="skill-card" data-delay="6">
+                  <img src="https://th.bing.com/th/id/ODF.QrPtMU6HdIU8yBwruNkEbA?w=32&h=32&qlt=90&pcl=fffffc&o=6&pid=1.2" alt="Tailwind CSS Icon" class="skill-icon tailwind-icon">
+                  <h4>Tailwind CSS</h4>
+                  <p>Utility-first styling for rapid, highly customizable UI development.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="skill-category">
+            <h3>&#9733; Tools & Deployment</h3>
+            <div class="skills-container">
+
+                 <div class="skill-card" data-delay="7">
+                    <i class="fab fa-github skill-icon"></i>
+                    <h4>Git / GitHub</h4>
+                    <p>Version control, branching, merging, and collaboration workflows.</p>
+                </div>
+
+                <div class="skill-card" data-delay="8">
+                    <i class="fab fa-docker skill-icon"></i>
+                    <h4>Docker</h4>
+                    <p>Containerization for consistent development and deployment environments.</p>
+                </div>
+                
+                <div class="skill-card" data-delay="9">
+                    <i class="fab fa-figma skill-icon"></i>
+                    <h4>Figma</h4>
+                    <p>Translating design prototypes into high-fidelity code.</p>
+                </div>
+            </div>
+        </div>
+
+       </div>
+       </section>
+
+        <section id="Credentials" 
+        class="w-full max-w-4xl">
+          <!-- H1: Main Section Title -->
+         <h2 class="certificate">My Certification And Achievements</h2>
+        <!-- Certifications Grid: Dynamic layout using CSS Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2">
+            <!-- Certification Card 1: freeCodeCamp Responsive Design (TAKES FULL WIDTH ON MOBILE) -->
+               <div class="p-8 rounded-xl cert-card">
+                    <div class="text-4xl mb-4 badge-icon">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <!-- H2: Certification Name -->
+                    <h3 class="text-4xl mb-4 badge-icon">Responsive Web Design Certification</h3>
+                 <!-- P: Issuing Authority & Focus -->
+                <p class="text-gray-400 text-sm">
+                    Authority: **freeCodeCamp**
+                </p>
+                <p class="text-gray-300 mt-4 leading-relaxed">
+                    Verified mastery of **CSS Grid**, **Flexbox**, and Media Queries to architect layouts that adapt seamlessly to any device or screen size. This foundational certificate covers five key projects ensuring practical application of responsive principles.
+                </p>
+                <!-- H3: Completion Detail -->
+                <h4 class="text-sm font-semibold mt-4 text-lime-300">
+                    Duration: 300+ Hours Completed
+                </h4>
+            </div>
+            
+            <!-- Certification Card 2: Front End Development Libraries (React/Redux) -->
+            <div class="p-8 rounded-xl cert-card">
+                <div class="text-4xl mb-4 badge-icon">
+                    <i class="fas fa-layer-group"></i>
+                </div>
+                <!-- H2: Certification Name -->
+                <h3 class="text-4xl mb-4 badge-icon">Front End Development Libraries</h3>
+                <!-- P: Issuing Authority & Focus -->
+                <p class="text-gray-400 text-sm">
+                    Authority: **freeCodeCamp**
+                </p>
+                <p class="text-gray-300 mt-3 leading-relaxed">
+                    Deep dive into modern state management and component-based architecture using **React** and **Redux**.
+                </p>
+                <!-- H3: Completion Detail -->
+                <h4 class="text-sm font-semibold mt-4 text-lime-300">
+                    Focus: React, Redux, Sass
+                </h4>
+            </div>
+
+             <div class="p-8 rounded-xl cert-card">
+            <div class="text-4xl mb-4 badge-icon">
+                <div class="badge-icon">
+                    <i class="fab fa-js-square"></i>
+                </div>
+                <h3>JavaScript Algorithms and Data Structures</h3>
+            </div>
+            <p class="text-gray-400 text-sm">
+                Authority: **freeCodeCamp**
+            </p>
+            <p class="text-gray-300 leading-relaxed">
+                Mastery of core JavaScript concepts, including ES6 features, functional programming, and solving complex algorithmic challenges.
+            </p>
+            <h4 class="text-sm font-semibold mt-4 text-lime-300">
+                Focus: ES6, Functional Programming, OOP
+            </h4>
+        </div>
+            
+            <!-- Certification Card 3: New Framework Specialization (Angular/Vue) -->
+            <div class="p-8 rounded-xl cert-card">
+                <div class="text-4xl mb-4 badge-icon">
+                    <i class="fab fa-angular"></i> <!-- Using Angular icon as an example -->
+                </div>
+                <!-- H2: Certification Name -->
+                <h3 class="text-4xl mb-4 badge-icon">Advanced Framework Specialization</h3>
+                <!-- P: Issuing Authority & Focus -->
+                <p class="text-gray-400 text-sm">
+                    Authority: **Global Dev Academy**
+                </p>
+                <p class="text-gray-300 mt-3 leading-relaxed">
+                    Specialized training in complex application structure, reactive programming, and testing with the **Angular Framework**.
+                </p>
+                <!-- H3: Completion Detail -->
+                <h4 class="text-sm font-semibold mt-4 text-lime-300">
+                    Focus: Angular, RxJS, CLI
+                </h3>
+            </div>
+            
+            <!-- Certification Card 4: Web Accessibility Specialist -->
+            <div class="p-8 rounded-xl cert-card">
+                <div class="text-4xl mb-4 badge-icon">
+                    <i class="fas fa-wheelchair"></i>
+                </div>
+                <!-- H2: Certification Name -->
+                <h3 class="text-4xl mb-4 badge-icon">Web Accessibility (A11Y) Expert</h3>
+                <!-- P: Issuing Authority & Focus -->
+                <p class="text-gray-400 text-sm">
+                    Authority: **UX Standards Institute**
+                </p>
+                <p class="text-gray-300 mt-3 leading-relaxed">
+                    Commitment to inclusive development, verified mastery of **WCAG 2.1** and practical **ARIA** implementation.
+                </p>
+                <!-- H3: Completion Detail -->
+                <h4 class="text-sm font-semibold mt-4 text-lime-300">
+                    Focus: WCAG 2.1, ARIA
+                </h4>
+            </div>
+        </div>
+     </section>
+
+     <!-- Projects Section -->
+     <!-- This section will showcase your various projects -->
+     <section id="projects">
+        <h2 class="work">There are My projects</h2>
+        <!-- Grid layout for project tiles, responsive across different screen sizes -->
+        <div class="container">
+             <div class="project-box">
+                 <div class="project-image">
+                  <a href="https://codepen.io/Dileep-Kumar-the-vuer/full/MYwBYaZ" target="_blank" class="block w-full">
+                  <img src="https://www.gccports.com/media/news-images/d2493-skycel.gif" alt="Survey form">
+                    <figcaption>Dashboard</figcaption>
+                  </a>
+                </div>
+            </div>
+            <!-- Project Tile 2: Example Tribute Page -->
+            <div class="project-box">
+               <div class="project-image">
+                <!-- Link to the external project, opens in a new tab -->
+                <a href="https://codepen.io/Dileep-Kumar-the-vuer/full/vELZdRe" target="_blank" class="block w-full">
+                    <img class="project-image" src="https://tse1.mm.bing.net/th/id/OIP.uZ8WHamIvS6q035Ou2JynQHaEo?w=960&h=600&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Tribute Page">
+                    <!-- Project title with a distinct style -->
+                     <figcaption></figcaption>
+                </a>
+            </div>
            </div>
-          
-              <div class="form-group">
-               <p>What would you like to see improved?
-               <span class="Clue">(Check all that apply)</span>
-               </p> 
-               <label for="learning">
-               <input id="learning"
-               name="prefer"
-               value="learnings"
-               type="checkbox"
-               class="input-checkbox"/>Learning</label>
-               <label for="development">
-               <input id="development"
-               name="prefer"
-               value="development"
-               type="checkbox"
-               class="input-checkbox"/>Development</label>
-               <label for="community">
-               <input id="community"
-               name="prefer"
-               value="community"
-               type="checkbox"
-               class="input-checkbox"/>Community</label>
-               <label for="challenges">
-               <input id="challenges"
-               name="prefer"
-               value="challenges"
-               type="checkbox"
-               class="input-checkbox"/>Challenges</label>
-               <label for="open-source">
-               <input id="open-source"
-               name="prefer"
-               value="open-source"
-               type="checkbox"
-               class="input-checkbox"/>Open Source</label>
-               <label for="help">
-               <input id="help"
-               name="prefer"
-               value="help"
-               type="checkbox"
-               class="input-checkbox"/>Help</label>
-               <label for="videos">
-               <input id="videos"
-               name="prefer"
-               value="videos"
-               type="checkbox"
-               class="input-checkbox"/>Videos</label>
-               
-               <label for="wiki">
-               <input id="wiki"
-               name="prefer"
-               value="wiki"
-               type="checkbox"
-               class="input-checkbox"/>Wiki</label>
-               <label for="forum">
-               <input id="forum"
-               name="prefer"
-               value="forum"
-               type="checkbox"
-               class="input-checkbox"/>Forum</label>
-              </div>
+            <!-- Project Tile 3: Example Random Quote Machine -->
+            <div class="project-box">
+               <div class="project-image">
+                <a href="https://codepen.io/Dileep-Kumar-the-vuer/full/azdwrXZ" target="_blank" class="block w-full">
+                    <img src="https://i.harborcompliance.com/images/service/industry/engineering/industry-engineering-hero-lg.jpg" alt="Random Quote">
+                     <figcaption>Weather App</figcaption>
+                </a>
+            </div>
+           </div>
+            <!-- Project Tile 4: Example Technical Documentation Page -->
+           <div class="project-box">
+            <div class="project-image">
+                <a href="https://codepen.io/Dileep-Kumar-the-vuer/full/pvgwaMo" target="_blank" class="block w-full">
+                    <img src="https://pipsqueezecreative.com/wp-content/uploads/2020/01/Sligo2.jpg" alt="Documentation Page">
+                     <figcaption>Media Clone</figcaption>
+                </a>
+            </div>
+           </div>
+            <!-- Project Tile 5: Example Product Landing Page -->
+           <div class="project-box">
+            <div class="project-image">
+                <a href="https://codepen.io/Dileep-Kumar-the-vuer/pen/MYKGQwW" target="_blank" class="block w-full">
+                    <img src="https://tse3.mm.bing.net/th/id/OIP.D7IHdu9VNuHiFG6dgxIpDwHaE8?w=1600&h=1067&rs=1&pid=ImgDetMain&o=7&rm=3" alt=" Landing Page">
+                    <figcaption>Landing Page</figcaption>
+                </a>
+            </div>
+           </div>
+            <!-- Project Tile 6: Placeholder for Github Page-->
+            <div class="project-box">
+             <div class="project-image">
+                    <a href="https://codminer.github.io/Codmine-Webpage/" alt="github-link"><img src="https://th.bing.com/th/id/R.c2d8e59d126fc3830dc1c4c8ae14ff51?rik=lSJLkkwHXThBUw&riu=http%3a%2f%2fcelinesalame.com%2fwp-content%2fuploads%2f2018%2f07%2fclicksco-website-Mockup.gif&ehk=Wgo84x09mWvgXeEw75wURONo6D8gx4fRdkySyLCrDg8%3d&risl=&pid=ImgRaw&r=0" alt="Portfolio">
+                     <figcaption>Portfolio</figcaption>
+                </a>
+            </div>
+          </div>
+            <!-- You can add more project tiles here following the same structure -->
+        </div>
+        <!-- Link to your GitHub or freeCodeCamp profile, opens in a new tab -->
+        <div class="project-tile">
+            <a id="profile-link" href="https://codepen.io/Dileep-Kumar-the-vuer" target="_blank" class="other">
+            <h2><i id="project-title">Show All Projects</i></h2>
+            </a>
+        </div>
+     </section>
+
+     <!-- This section provides ways for visitors to contact you -->
+     <section id="Contact" class="reach">
+     <!-- Main Contact Us Section -->
+     <div class="flex-grow flex items-center justify-center p-3 sm:p-6">
+        <div class="glass-card w-full max-w-l p-6 sm:p-9 rounded-[1rem]">
             
-             <div class="form-group">
-               <p class="comment">Any comments or suggestions!</p>
-               <textarea
-               id="comments"
-               class="input-textarea"
-               name="comment"
-               placeholder="Your comments  here..."></textarea>
-              </div>
+            <header class="text-center mb-9">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-[var(--secondery-color)]">
+                    Get In Touch
+                </h2>
+                <p class="mt-3 text-lg text-aliceblue-600 light:text-gray-300">
+                    Let's collaborate and build something exceptional.
+                </p>
+            </header>
+
+            <form class="space-y-5">
+                <!-- Name and Email fields in a responsive grid -->
+                <div class="grid grid-cols-1 gap-4">
+                    <div>
+                        <label for="name" class="block text-l font-bold">Your Name</label>
+                        <input type="text" id="name" required 
+                            class="mt-1 block w-full p-3 border border-gray-400/30 dark:border-gray-600/50 rounded-xl bg-[var(--input-bg)] focus:ring-2 focus:ring-[var(--primary-color)] focus:border-[var(--primary-color)] transition duration-300 text-[var(--text-color)] placeholder-gray-500">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-l font-bold">Email</label>
+                        <input type="email" id="email" required 
+                            class="mt-1 block w-full p-3 border border-gray-400/30 dark:border-gray-600/50 rounded-xl bg-[var(--input-bg)] focus:ring-2 focus:ring-[var(--primary-color)] focus:border-[var(--primary-color)] transition duration-300 text-[var(--text-color)] placeholder-gray-500">
+                    </div>
+                </div>
+
+                <!-- Message field -->
+                <div>
+                    <label for="message" class="block text-l font-bold">Message</label>
+                    <textarea id="message" rows="5" required 
+                        class="mt-1 block w-full p-3 border border-gray-400/30 dark:border-gray-600/50 rounded-xl bg-[var(--input-bg)] focus:ring-2 focus:ring-[var(--primary-color)] focus:border-[var(--primary-color)] transition duration-300 text-[var(--text-color)] placeholder-gray-500"></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="pt-4">
+                    <button type="submit" class="w-full py-4 px-4 rounded-xl text-white font-bold tracking-wider 
+                        bg-[var(--secondery-color)] hover:opacity-90 transition duration-300 shadow-xl 
+                        hover:shadow-[0_0_15px_0_rgba(60,100,250,0.5)] dark:hover:shadow-[0_0_15px_0_rgba(120,120,120,0.7)]">
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </div>
+     </div>
+     </section>   
+     <!--FOOTER SECTION with Font Awesome Links-->
+        <footer class="mt-6 py-4 transition-colors duration-400"></footer> 
+          <div class="mx-auto px-4 text-center">
             
-          <div class="form-group">
-            <button type="submit" id="submit" class="submit-button">
-              Submit 
-            </button>
-          </div> 
-        </form> 
+            <div class="flex justify-center space-x-8 mb-4">
+                
+                <!-- GitHub Icon Link -->
+                <a href="https://github.com" target="_blank" aria-label="GitHub Profile" 
+                   class="social-icon text-gray-700 dark:text-gray-300 text-3xl hover:text-blue-500">
+                    <i class="fab fa-github"></i>
+                </a>
+                
+                <!-- LinkedIn Icon Link -->
+                <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn Profile" 
+                   class="social-icon text-gray-700 dark:text-gray-300 text-3xl hover:text-blue-500">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+
+                <!-- X (Twitter) Icon Link -->
+                <a href="https://x.com" target="_blank" aria-label="X (Twitter) Profile" 
+                   class="social-icon text-gray-700 dark:text-gray-300 text-3xl hover:text-blue-500">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+
+                <!-- Mail Icon Link -->
+                <a href="mailto:originewera1729@gmail.com" aria-label="Email Address" 
+                   class="social-icon text-gray-700 dark:text-gray-300 text-3xl hover:text-blue-500">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <p class="text-m text-lightgray-600">&copy; 2025 Codeminer. All Rights Reserved.
+            </p>
+           </div>
+        </footer>
+    </main>
+         <!-- JavaScript for Theme Toggle -->
+        <script>
+          // Function to toggle the theme
+          function toggleTheme() {
+            const htmlElement = document.documentElement;
+            const isDark = htmlElement.classList.contains('dark');
+            
+            htmlElement.classList.remove(isDark ? 'dark' : 'light');
+            htmlElement.classList.add(isDark ? 'light' : 'dark');
+            localStorage.setItem('theme', isDark ? 'light' : 'dark');
+
+            // Update icon appearance (simple swap is handled by Tailwind hidden/dark:block)
+            const icon = document.querySelector('#themeToggle i');
+            icon.classList.toggle('fa-moon');
+            icon.classList.toggle('fa-sun');
+          }
+
+          // Initialize theme based on localStorage or default to dark
+          (function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.classList.remove('light', 'dark');
+            document.documentElement.classList.add(savedTheme);
+
+            // Set initial icon state
+            const icon = document.querySelector('#themeToggle i');
+            if (savedTheme === 'dark') {
+                icon.classList.add('fa-moon', 'text-yellow-400');
+                icon.classList.remove('fa-sun', 'text-gray-800');
+            } else {
+                icon.classList.add('fa-sun', 'text-gray-800');
+                icon.classList.remove('fa-moon', 'text-yellow-400');
+            }
+          })();
+
+          document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+        </script>
+
+        <script>
+        (async () => {
+            const circularContainer = document.getElementById('circular-icon-container');
+
+            // --- Configuration and Data ---
+            const TECH_DATA = [
+                { faClass: "fa-js", color: "text-yellow-400" }, { faClass: "fa-python", color: "text-sky-400" }, 
+                { faClass: "fa-java", color: "text-red-500" }, { faClass: "fa-file-code", color: "text-blue-500" },
+                { faClass: "fa-html5", color: "text-orange-500" }, { faClass: "fa-css3-alt", color: "text-blue-600" }, 
+                { faClass: "fa-cuttlefish", color: "text-blue-700" }, { faClass: "fa-gem", color: "text-red-400" }, 
+                { faClass: "fa-react", color: "text-cyan-300" }, { faClass: "fa-angular", color: "text-red-700" }, 
+                { faClass: "fa-vuejs", color: "text-green-500" }, { faClass: "fa-node-js", color: "text-green-400" }, 
+                { faClass: "fa-wind", color: "text-teal-400" }, { faClass: "fa-bootstrap", color: "text-purple-600" }, 
+                { faClass: "fa-sass", color: "text-pink-500" }, { faClass: "fa-jira", color: "text-blue-400" },
+                { faClass: "fa-database", color: "text-gray-400" }, { faClass: "fa-git-alt", color: "text-red-600" }, 
+                { faClass: "fa-docker", color: "text-blue-400" }, { faClass: "fa-figma", color: "text-purple-500" }, 
+                { faClass: "fa-terminal", color: "text-gray-200" }, { faClass: "fa-cloud", color: "text-sky-300" }, 
+                { faClass: "fa-server", color: "text-yellow-600" }, { faClass: "fa-code", color: "text-blue-300" },
+                { faClass: "fa-google", color: "text-red-500" }, { faClass: "fa-microsoft", color: "text-sky-500" },
+                { faClass: "fa-envira", color: "text-green-600" }, { faClass: "fa-php", color: "text-purple-400" },
+                { faClass: "fa-laravel", color: "text-orange-600" }, { faClass: "fa-amazon", color: "text-orange-300" },
+            ];
+            
+            const NUM_STARS = 50; 
+            const STAR_BASE_SIZE = 100;
+
+            const getRandom = (min, max) => Math.random() * (max - min) + min;
+
+            // --- Star Object Definition ---
+            class Star {
+                constructor(index) {
+                    this.el = document.createElement('div');
+                    this.el.className = 'tech-star';
+                    this.el._animationIndex = index;
+                    circularContainer.appendChild(this.el);
+
+                    this.reset();
+                    this.initStyles();
+                }
+
+                initStyles() {
+                    this.el.style.zIndex = Math.floor(getRandom(1, 10));
+                    this.el.style.setProperty('--icon-badge-size', `${STAR_BASE_SIZE}px`);
+                }
+                
+                // Get the current radius and center dynamically
+                getCircleProps() {
+                    const size = circularContainer.clientWidth;
+                    return {
+                        radius: size / 2,
+                        center: size / 2,
+                        size: size
+                    };
+                }
+
+                reset() {
+                    const props = this.getCircleProps();
+                    const data = TECH_DATA[Math.floor(getRandom(0, TECH_DATA.length))];
+                    
+                    // Reset position within the circle boundaries
+                    const angle = getRandom(0, 2 * Math.PI);
+                    // Place icon randomly closer to center for less edge crowding on reset
+                    const distance = getRandom(0, props.radius * 0.9); 
+                    
+                    // Calculate position relative to the container's top-left corner
+                    this.x = props.center + distance * Math.cos(angle) - STAR_BASE_SIZE / 2;
+                    this.y = props.center + distance * Math.sin(angle) - STAR_BASE_SIZE / 2;
+                    
+                    this.speedX = getRandom(-0.5, 0.5); 
+                    this.speedY = getRandom(-0.5, 0.5); 
+                    this.rotationSpeed = getRandom(-0.05, 0.05); 
+                    this.currentRotation = getRandom(0, 360);
+
+                    this.scaleTarget = getRandom(0.6, 1.3);
+                    this.opacityTarget = getRandom(0.6, 1.0);
+                    
+                    if (this.el) {
+                        this.el.innerHTML = `
+                            <div class="icon-badge">
+                                <i class="fa-brands ${data.faClass} text-5xl ${data.color} text-glow"></i>
+                            </div>
+                        `;
+                    }
+                }
+
+                update(deltaTime, time) {
+                    const props = this.getCircleProps();
+                    
+                    // 1. DRIFT MOTION
+                    this.x += this.speedX * deltaTime * 0.05;
+                    this.y += this.speedY * deltaTime * 0.05;
+                    this.currentRotation += this.rotationSpeed * deltaTime * 0.05;
+
+                    // 2. BOUNDARY CHECK: If outside the circle, reset
+                    const centerX = this.x + STAR_BASE_SIZE / 2;
+                    const centerY = this.y + STAR_BASE_SIZE / 2;
+                    const distFromCenter = Math.sqrt(
+                        (centerX - props.center) ** 2 + 
+                        (centerY - props.center) ** 2
+                    );
+                    
+                    // Check if icon's center is outside the radius minus a small margin
+                    if (distFromCenter > props.radius - STAR_BASE_SIZE / 4) { 
+                        this.reset();
+                    }
+
+                    // 3. TWINKLE EFFECT
+                    const phase = (time + this.el._animationIndex * 0.7) * 0.02;
+                    this.opacity = this.opacityTarget * (0.6 + 0.4 * Math.sin(phase * 1.5 + Math.PI / 4));
+                    this.scale = this.scaleTarget * (0.7 + 0.3 * Math.cos(phase * 0.8));
+
+                    // 4. APPLY STYLES
+                    this.el.style.transform = `translate(${this.x}px, ${this.y}px) scale(${this.scale}) rotate(${this.currentRotation}deg)`;
+                    this.el.style.opacity = this.opacity;
+                }
+            }
+
+            // --- Main Animation Loop Setup ---
+            const stars = [];
+            for (let i = 0; i < NUM_STARS; i++) {
+                stars.push(new Star(i));
+            }
+
+            let lastTime = 0;
+            const animate = (currentTime) => {
+                const deltaTime = currentTime - lastTime;
+                lastTime = currentTime;
+
+                stars.forEach(star => {
+                    star.update(deltaTime, currentTime / 1000); 
+                });
+
+                requestAnimationFrame(animate);
+            };
+
+            // Start the animation
+            window.onload = function () {
+                animate(0); 
+            }
+
+            // Handle resizing to keep the circle logic correct
+            window.addEventListener('resize', () => {
+                // When resized, force all stars to reset their position to the new circular boundary
+                stars.forEach(star => star.reset());
+            });
+
+        })();
+
+        document.addEventListener('DOMContentLoaded', () => {
+     const skillCards = document.querySelectorAll('.skill-card');
+
+     const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Get the delay value from the HTML data attribute
+                const delay = entry.target.getAttribute('data-delay');
+                // Apply the delay as a CSS custom property (which CSS can read)
+                entry.target.style.setProperty('--data-delay', delay); 
+                
+                // Trigger the animation
+                entry.target.classList.add('is-visible');
+                
+                // Stop observing this card once it's visible
+                observer.unobserve(entry.target); 
+            }
+        });
+      }, {
+        threshold: 0.1 
+      });
+  
+      skillCards.forEach(card => {
+        // Initially set the data-delay property on each card
+        card.style.setProperty('--data-delay', card.getAttribute('data-delay'));
+        observer.observe(card);
+        });
+       });
+     </script>
     </body>
-  </html>
+</html>
