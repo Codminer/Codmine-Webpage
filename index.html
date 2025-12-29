@@ -95,9 +95,9 @@
             <!-- Navigation links to different sections of the page -->
             <li><a href="https://codminer.github.io/Codmine-Webpage/" target="_blank" id="profile-link" class="nav-link">Portfolio</a></li>
             <li><a href="#About" class="nav-link">About</a></li>
-            <li><a href="#skills" class="nav-link">Skills</a></li>
-            <li><a href="#Credentials" class="nav-link">Credentials</a></li>
-            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#skills" class="nav-link">Skill</a></li>
+            <li><a href="#Credentials" class="nav-link">Credential</a></li>
+            <li><a href="#projects" class="nav-link">Project</a></li>
             <li><a href="#Contact" class="nav-link">Contact</a></li>
           </ul>
         </nav>
@@ -109,8 +109,7 @@
             <div id="Portfolio">
                   <div class="hero-section">
                   </div>
-                  <div id="circular-icon-container">
-                  </div>
+
                   <h1><div class="intro"><span>H</span><span>e</span><span>l</span><span>l</span><span>o</span><span>!</span></div></h1><br>
                   <p class="name">I'am<div class="owner"><span>C</spain><span>o</span><span>d</span><span>m</span><span>i
                   </span><span>n</span><span>e</span><span>r</span></div></p>
@@ -563,186 +562,9 @@
 
           document.getElementById('themeToggle').addEventListener('click', toggleTheme);
         </script>
-
-        <script>
-        (async () => {
-            const circularContainer = document.getElementById('circular-icon-container');
-
-            // --- Configuration and Data ---
-            const TECH_DATA = [
-                { faClass: "fa-js", color: "text-yellow-400" }, { faClass: "fa-python", color: "text-sky-400" }, 
-                { faClass: "fa-java", color: "text-red-500" }, { faClass: "fa-file-code", color: "text-blue-500" },
-                { faClass: "fa-html5", color: "text-orange-500" }, { faClass: "fa-css3-alt", color: "text-blue-600" }, 
-                { faClass: "fa-cuttlefish", color: "text-blue-700" }, { faClass: "fa-gem", color: "text-red-400" }, 
-                { faClass: "fa-react", color: "text-cyan-300" }, { faClass: "fa-angular", color: "text-red-700" }, 
-                { faClass: "fa-vuejs", color: "text-green-500" }, { faClass: "fa-node-js", color: "text-green-400" }, 
-                { faClass: "fa-wind", color: "text-teal-400" }, { faClass: "fa-bootstrap", color: "text-purple-600" }, 
-                { faClass: "fa-sass", color: "text-pink-500" }, { faClass: "fa-jira", color: "text-blue-400" },
-                { faClass: "fa-database", color: "text-gray-400" }, { faClass: "fa-git-alt", color: "text-red-600" }, 
-                { faClass: "fa-docker", color: "text-blue-400" }, { faClass: "fa-figma", color: "text-purple-500" }, 
-                { faClass: "fa-terminal", color: "text-gray-200" }, { faClass: "fa-cloud", color: "text-sky-300" }, 
-                { faClass: "fa-server", color: "text-yellow-600" }, { faClass: "fa-code", color: "text-blue-300" },
-                { faClass: "fa-google", color: "text-red-500" }, { faClass: "fa-microsoft", color: "text-sky-500" },
-                { faClass: "fa-envira", color: "text-green-600" }, { faClass: "fa-php", color: "text-purple-400" },
-                { faClass: "fa-laravel", color: "text-orange-600" }, { faClass: "fa-amazon", color: "text-orange-300" },
-            ];
-            
-            const NUM_STARS = 50; 
-            const STAR_BASE_SIZE = 100;
-
-            const getRandom = (min, max) => Math.random() * (max - min) + min;
-
-            // --- Star Object Definition ---
-            class Star {
-                constructor(index) {
-                    this.el = document.createElement('div');
-                    this.el.className = 'tech-star';
-                    this.el._animationIndex = index;
-                    circularContainer.appendChild(this.el);
-
-                    this.reset();
-                    this.initStyles();
-                }
-
-                initStyles() {
-                    this.el.style.zIndex = Math.floor(getRandom(1, 10));
-                    this.el.style.setProperty('--icon-badge-size', `${STAR_BASE_SIZE}px`);
-                }
-                
-                // Get the current radius and center dynamically
-                getCircleProps() {
-                    const size = circularContainer.clientWidth;
-                    return {
-                        radius: size / 2,
-                        center: size / 2,
-                        size: size
-                    };
-                }
-
-                reset() {
-                    const props = this.getCircleProps();
-                    const data = TECH_DATA[Math.floor(getRandom(0, TECH_DATA.length))];
-                    
-                    // Reset position within the circle boundaries
-                    const angle = getRandom(0, 2 * Math.PI);
-                    // Place icon randomly closer to center for less edge crowding on reset
-                    const distance = getRandom(0, props.radius * 0.9); 
-                    
-                    // Calculate position relative to the container's top-left corner
-                    this.x = props.center + distance * Math.cos(angle) - STAR_BASE_SIZE / 2;
-                    this.y = props.center + distance * Math.sin(angle) - STAR_BASE_SIZE / 2;
-                    
-                    this.speedX = getRandom(-0.5, 0.5); 
-                    this.speedY = getRandom(-0.5, 0.5); 
-                    this.rotationSpeed = getRandom(-0.05, 0.05); 
-                    this.currentRotation = getRandom(0, 360);
-
-                    this.scaleTarget = getRandom(0.6, 1.3);
-                    this.opacityTarget = getRandom(0.6, 1.0);
-                    
-                    if (this.el) {
-                        this.el.innerHTML = `
-                            <div class="icon-badge">
-                                <i class="fa-brands ${data.faClass} text-5xl ${data.color} text-glow"></i>
-                            </div>
-                        `;
-                    }
-                }
-
-                update(deltaTime, time) {
-                    const props = this.getCircleProps();
-                    
-                    // 1. DRIFT MOTION
-                    this.x += this.speedX * deltaTime * 0.05;
-                    this.y += this.speedY * deltaTime * 0.05;
-                    this.currentRotation += this.rotationSpeed * deltaTime * 0.05;
-
-                    // 2. BOUNDARY CHECK: If outside the circle, reset
-                    const centerX = this.x + STAR_BASE_SIZE / 2;
-                    const centerY = this.y + STAR_BASE_SIZE / 2;
-                    const distFromCenter = Math.sqrt(
-                        (centerX - props.center) ** 2 + 
-                        (centerY - props.center) ** 2
-                    );
-                    
-                    // Check if icon's center is outside the radius minus a small margin
-                    if (distFromCenter > props.radius - STAR_BASE_SIZE / 4) { 
-                        this.reset();
-                    }
-
-                    // 3. TWINKLE EFFECT
-                    const phase = (time + this.el._animationIndex * 0.7) * 0.02;
-                    this.opacity = this.opacityTarget * (0.6 + 0.4 * Math.sin(phase * 1.5 + Math.PI / 4));
-                    this.scale = this.scaleTarget * (0.7 + 0.3 * Math.cos(phase * 0.8));
-
-                    // 4. APPLY STYLES
-                    this.el.style.transform = `translate(${this.x}px, ${this.y}px) scale(${this.scale}) rotate(${this.currentRotation}deg)`;
-                    this.el.style.opacity = this.opacity;
-                }
-            }
-
-            // --- Main Animation Loop Setup ---
-            const stars = [];
-            for (let i = 0; i < NUM_STARS; i++) {
-                stars.push(new Star(i));
-            }
-
-            let lastTime = 0;
-            const animate = (currentTime) => {
-                const deltaTime = currentTime - lastTime;
-                lastTime = currentTime;
-
-                stars.forEach(star => {
-                    star.update(deltaTime, currentTime / 1000); 
-                });
-
-                requestAnimationFrame(animate);
-            };
-
-            // Start the animation
-            window.onload = function () {
-                animate(0); 
-            }
-
-            // Handle resizing to keep the circle logic correct
-            window.addEventListener('resize', () => {
-                // When resized, force all stars to reset their position to the new circular boundary
-                stars.forEach(star => star.reset());
-            });
-
-        })();
-
-        document.addEventListener('DOMContentLoaded', () => {
-     const skillCards = document.querySelectorAll('.skill-card');
-
-     const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Get the delay value from the HTML data attribute
-                const delay = entry.target.getAttribute('data-delay');
-                // Apply the delay as a CSS custom property (which CSS can read)
-                entry.target.style.setProperty('--data-delay', delay); 
-                
-                // Trigger the animation
-                entry.target.classList.add('is-visible');
-                
-                // Stop observing this card once it's visible
-                observer.unobserve(entry.target); 
-            }
-        });
-      }, {
-        threshold: 0.1 
-      });
-  
-      skillCards.forEach(card => {
-        // Initially set the data-delay property on each card
-        card.style.setProperty('--data-delay', card.getAttribute('data-delay'));
-        observer.observe(card);
-        });
-       });
-     </script>
     </body>
 </html>
+
 
 
 
