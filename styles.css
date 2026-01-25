@@ -166,17 +166,17 @@ body {
     25% {
       color: #1a202c;
       top: 0px;
-      left: 5px;
+      left: 0px;
     }
      50% {
       color: #1a202c;
-      top: 5px;
-      left: 5px;
+      top: 0px;
+      left: 0px;
     }
      75% {
       color: #1a202c;
       top: 0px;
-      left: 5px;
+      left: 0px;
     }
      
    100% {
@@ -585,4 +585,5 @@ body {
             }
 
         }
+
 
