@@ -195,7 +195,7 @@ body {
   }
   
 /* Welcome and others section styles */
-#Home, #Portfolio, #About, #Contact {
+#About, #Contact, #Portfolio {
     top: 0;
     height: 100vh;
     width: 100%;
@@ -273,7 +273,7 @@ body {
  .nav-link:hover {
    background-color: #1a202c;/* Slightly lighter background on hover */
    color: azure;/* Different text color on hover */
-   transform: scale(0.95); /* Slightly enlarge link on hover */
+   transform: scale(1.05); /* Slightly enlarge link on hover */
    text-decoration: none; /* Ensure no underline on hover */
    box-shadow: 0 7px 12px rgba(180,180,255, 0.75); 
 
@@ -281,7 +281,7 @@ body {
 }
 
  .nav-link:active {
-    color: purple;
+    color: rgb(48, 4, 48);
     background-color: #1a202c; /* Darker background on active state */
     box-shadow: 0 3px 5px rgba(180,180,255, 0.75);  /* Subtle shadow on active state */
     transform: scale(1.0); /* Slightly reduce size on active state */
@@ -519,7 +519,7 @@ body {
 }
 
 /* Styles for screens smaller than 768px (e.g., tablets in portrait, large phones) */
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   body {
     min-width: 100%;
     height: 100vh;
@@ -559,18 +559,11 @@ body {
         margin-top: 0.7rem;
     }
     .nav-link:hover {
-      transform: scale(0.95);
+      transform: scale(1.05);
       box-shadow: 0 5px 7px rgba(246, 245, 245, 0.75); /* Add shadow on hover */
     }
-    #welcome-section h1 {
-        font-size: 2.5rem; /* Adjust font size for smaller screens */
-        padding: 0 1rem; /* Add horizontal padding */
-        line-height: 1.2; /* Adjust line height for readability */
-        margin: 0 auto; /* Center the heading */
-        max-width: 500px; /* Limits the maximum width of the heading for better readability */
-
-    }
-     #Credential, #Project {
+  
+     #Certs, #Project {
       box-sizing: border-box;
       text-align: center;
       justify-content: center;
@@ -581,12 +574,22 @@ body {
   }
 
    /* Small Devices / Tablets (sm: >= 640px) */
-        @media (min-width: 640px) {
+        @media (max-width: 480px) {
             .container {
                 /* Auto-fit: as many 300px columns as possible */
                 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
                 padding: 1.5rem;
             }
+           .nav-link {
+        display: flex;
+        flex-direction: row; /* Stack navbar links vertically */
+        align-items: center; /* Center stacked links */
+        justify-content: center;
+        text-align: center;
+        padding: 0.3rem  0.75rem; /* Add vertical padding */
+        font-size: 0.9rem;     
+        margin-top: 0.7rem;
+    }
         }
 
          /* Large Devices / Large Desktops (lg: >= 1024px) */
