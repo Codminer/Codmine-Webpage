@@ -220,11 +220,11 @@ body {
     top: 0%;
     width: 100%; /* Spans the full width of the viewport */
     color: azure; /* Light text color for navbar links */
-    background-color: rgba(255, 255, 255, .1);   /* Darker navy background for the navbar */
+    background-color: rgba(26, 26, 53, 0.3);   /* Darker navy background for the navbar */
     z-index: 3; /* Ensures the navbar stays above other content */
     backdrop-filter: blur(10px); /* Adds a blur effect to the background */
     -webkit-backdrop-filter: blur(10px); /* Safari support for backdrop blur */
-    border-bottom: 1px solid rgba(238, 231, 231, 0.3); /* Light border at the bottom */
+    border-bottom: 1px solid rgba(247, 244, 244, 0.3); /* Light border at the bottom */
     transition: all ease-in-out 0.3s; /* Smooth transition for background color changes */
     font-size: 1.2rem; /* Slightly larger font size for better readability */
     font-weight: normal; /* Semi-bold font weight for emphasis */
@@ -263,9 +263,9 @@ body {
     font-weight: normal; /* Semi-bold font weight for emphasis */
     margin: 0 auto; /* Ensures padding and margin are applied correctly */
     padding: 0.5rem;
-    box-shadow: 0 0.5px 0 0.5px rgba(255, 255, 255, 0.3); 
+    box-shadow: 0 0.3px 0 0.3px rgba(255, 255, 255, 0.1); 
     box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
-    background-color: #1a202c; /* Dark background for links */
+    background-color: #1a1e28; /* Dark background for links */
     
 }
 
