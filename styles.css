@@ -1,10 +1,9 @@
 /* CSS Variables for Dark Theme and Azure Text Color */
-:root { 
-    --bg-dark: #1a202c; /* Dark background color */
-    --text-light: #e0e7ff; /* Light text color */
+:root {
+    --text-light: azure; /* Light text color */
     --highlight-azure: #00ffff; /* Azure color for highlights */
-    --card-bg: #2d3748; /* Dark card background */
-    --shadow-color: rgba(0, 255, 255, 0.3); /* Light azure shadow color */
+    --card-bg: rgba(255, 255, 255, 0.03); /* Dark card background */
+    --shadow-color: rgba(0, 160, 200, 0.3); /* Light azure shadow color */
 }
 /* Base body styles */
 body {
@@ -195,7 +194,7 @@ body {
   }
   
 /* Welcome and others section styles */
-#About, #Contact, #Portfolio {
+ #Portfolio, #About, #Contact {
     top: 0;
     height: 100vh;
     width: 100%;
@@ -273,7 +272,7 @@ body {
  .nav-link:hover {
    background-color: #1a202c;/* Slightly lighter background on hover */
    color: azure;/* Different text color on hover */
-   transform: scale(1.05); /* Slightly enlarge link on hover */
+   transform: scale(1.02); /* Slightly enlarge link on hover */
    text-decoration: none; /* Ensure no underline on hover */
    box-shadow: 0 7px 12px rgba(180,180,255, 0.75); 
 
@@ -281,7 +280,7 @@ body {
 }
 
  .nav-link:active {
-    color: rgb(48, 4, 48);
+    color: purple;
     background-color: #1a202c; /* Darker background on active state */
     box-shadow: 0 3px 5px rgba(180,180,255, 0.75);  /* Subtle shadow on active state */
     transform: scale(1.0); /* Slightly reduce size on active state */
@@ -388,7 +387,7 @@ body {
     border-top: 1px solid rgba(247, 244, 244, 0.3); /* Light border at the bottom */
     height: auto;
     margin: 0 auto;
-    padding: 10px;
+    padding: 0 auto;
    }
   
     .certificate {
@@ -412,13 +411,14 @@ body {
     padding: 80px 20px;
     text-align: center;
     background-color: var(--bg-dark);
-    color: var(--text-light);
+   
 }
 
 .skills-section h2 {
-    color: var(--highlight-azure); /* Azure title */
-    margin-bottom: 50px;
-    font-size: 2.5rem;
+    color: azure; /* Azure title */
+    margin: 0 auto;
+    font-size: 2.25rem;
+    font-weight: bold;
 }
 
 /* Category Headers */
@@ -559,8 +559,8 @@ body {
         margin-top: 0.7rem;
     }
     .nav-link:hover {
-      transform: scale(1.05);
-      box-shadow: 0 5px 7px rgba(246, 245, 245, 0.75); /* Add shadow on hover */
+      transform: scale(1.02);
+      box-shadow: 0 3px 5px rgba(246, 245, 245, 0.75); /* Add shadow on hover */
     }
   
      #Certs, #Project {
