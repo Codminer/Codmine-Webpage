@@ -331,13 +331,13 @@ body.dark {
 .pt-4 {
   display: inline-block;
   position: relative;
-  color: # !important;
-  font-family: Arial, Helvetica, sans-erif;
+  color: #888 !important;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
   font-weight: bold;
   padding: 2px;
   margin: 2px;
-  align-item: center;
+  align-items: center;
   justify-content: center;
   
   
@@ -371,6 +371,7 @@ body.dark {
 
  .work, #project-title, .certificate {
     display: flex;
+    position: relative;
     flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 2rem;
@@ -438,7 +439,7 @@ body.dark {
     margin: 0 auto;
     font-size: 2.25rem;
     font-weight: bold;
-    front-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Category Headers */
@@ -563,8 +564,11 @@ body.dark {
    .container {
             padding: 2rem;
             max-width: 1280px;
-            margin: 0 auto;
-            grid-template-columns: 1fr;
+            margin: 20px auto;
+            align-items: center;
+            justify-content: center;
+             /* Auto-fit: as many 300px columns as possible */
+            grid-template-columns: repeat(2, 300px);
         }
 
   
@@ -574,7 +578,7 @@ body.dark {
         align-items: center; /* Center stacked links */
         justify-content: center;
         text-align: center;
-        padding: 0.4rem  0.5rem; /* Add vertical padding */
+        padding: 0.4rem; /* Add vertical padding */
         margin-top: 0.5rem;
     }
     .nav-link:hover {
@@ -592,11 +596,11 @@ body.dark {
      }
   }
 
-   /* Small Devices / Tablets (sm: >= 640px) */
+   /* Small Devices / Tablets (sm: >= 480px) */
         @media (max-width: 480px) {
             .container {
                 /* Auto-fit: as many 300px columns as possible */
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                grid-template-columns: repeat(2, 200px);
                 padding: 1.5rem;
             }
            .nav-link {
@@ -605,7 +609,7 @@ body.dark {
         align-items: center; /* Center stacked links */
         justify-content: center;
         text-align: center;
-        padding: 0.4rem  0.5rem; /* Add vertical padding */
+        padding: 0.4rem; /* Add vertical padding */
         font-size: 1rem;     
         margin-top: 0.5rem;
     }
@@ -615,8 +619,19 @@ body.dark {
         @media (min-width: 1024px) {
             .container {
                  /* Fixed 3-column layout on large screens */
-                grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+                grid-template-columns: repeat(3, 300px);
             }
+              .nav-link {
+        display: flex;
+        flex-direction: row; /* Stack navbar links vertically */
+        align-items: center; /* Center stacked links */
+        justify-content: center;
+        text-align: center;
+        padding: 0.5rem; /* Add vertical padding */
+        font-size: 1.25rem;
+        margin-top: 0.5rem;
+              }
+
 
         }
 
