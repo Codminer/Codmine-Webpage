@@ -1,26 +1,40 @@
-/* CSS Variables for Dark Theme and Azure Text Color */
-:root { 
-    --bg-dark: #1a202c; /* Dark background color */
-    --text-light: #e0e7ff; /* Light text color */
-    --highlight-azure: #00ffff; /* Azure color for highlights */
-    --card-bg: #2d3748; /* Dark card background */
-    --shadow-color: rgba(0, 255, 255, 0.3); /* Light azure shadow color */
-}
 /* Base body styles */
 body {
     width: 100%;
     min-width: 100vw;
     height: 100vh;
-    font-family:'Times New Roman', Times, serif;/* Using Inter font from Google Fonts */
-    background-color: #1a202c; /* Dark background color */
-    color: #fff; /* Light text color for contrast */
-    line-height: 1.5; /* Improved readability for body text */
+    background-color: #fffff3;
+    color: #888;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1rem;
+    transition: background 0.3s, color 0.3s;
+    line-height: 1.6; /* Improved readability for body text */
     margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
+    padding: 1rem;
     overflow-x: hidden; /* Prevent horizontal scroll */
     scroll-behavior: smooth; /* Smooth scrolling for anchor links */
     object-fit: cover;
 
+}
+
+#theme-toggle {
+  display: inline-block;
+  position: relative;
+  color: #fffff3;
+  font-weight: bold;
+  background-color: none;
+  padding: 0.34rem;
+  font-size: 2rem;
+  cursor: pointer;
+  margin: 0 auto;
+  z-index: 10;
+  transition: background 0.2s, color 0.2s;
+  overflow: hidden;
+}
+
+body.dark {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
 }
 
         .hero-section {
@@ -34,7 +48,8 @@ body {
         }
     
    .name, .intro {
-    font-family:'Times New Roman', Times, serif;
+    color: #808080;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 50px;
     font-weight: 550;
 
@@ -64,8 +79,8 @@ body {
    }
 
  .role .static-text {
-    color: azure;
-    font-family:'Times New Roman', Times, serif;
+    color: #808080;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 60px;
     font-weight: 548;
     
@@ -77,11 +92,12 @@ body {
     height: 90px;
     line-height: 90px;
     
+    
   }
 
   .dynamic-text li {
-    font-family:'Times New Roman', Times, serif;
-    color: aqua;
+    font-family: Arial, Helvetica, sans-serif;
+    color: seagreen;
     list-style: none;
     font-size: 60px;
     font-weight: 500;
@@ -123,11 +139,11 @@ body {
 
   .intro span {
     position: relative;
-    font-family:'Times New Roman', Times, serif;
+    font-family:  Arial, Helvetica, sans-serif;
     top: 10px;
     margin: 0 auto;
     padding: 0 auto;
-    color: azure;
+    color: #A9A9A9;
     display: inline-block;
     font-size: 5rem;
     text-shadow: 0 3px 7px rgba(255, 255, 255, 0.9);
@@ -152,50 +168,43 @@ body {
   
 .owner span {
     position: relative;
-    font-family:'Times New Roman', Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
     top: 20px;
     margin: 0 auto;
     padding: 0 auto;
-    color: azure;
+    color: #A9A9A9;
     display: flex;
     font-size: 50px;
     font-weight: 550;
-    text-shadow: 0 4px 9px rgba(0, 0, 125, 0.1);
     animation: slide-in 1.5s linear 0s infinite alternate-reverse;
 
   }
   @keyframes slide-in {
     0% {
-      color: azure;
+      color: #1e1e1e;
       top: 0px;
       left: 0px;
     }
      
-    25% {
-      color: #1a202c;
+    33.33% {
+      color: #fffff3;
       top: 0px;
       left: 0px;
     }
-     50% {
-      color: #1a202c;
+     66.66% {
+      color: #fffff3;
       top: 0px;
       left: 0px;
     }
-     75% {
-      color: #1a202c;
-      top: 0px;
-      left: 0px;
-    }
-     
    100% {
-     color: azure;
+     color: #1e1e1e;
       top: 0px;
       left: 0px;
    }
   }
   
 /* Welcome and others section styles */
-#About, #Contact, #Portfolio {
+ #Portfolio, #About, #Contact {
     top: 0;
     height: 100vh;
     width: 100%;
@@ -205,12 +214,12 @@ body {
     align-items: center;
     overflow: hidden;
     flex-wrap: nowrap;
-    color: azure; /* Lighter text color for this section */
+    color: #a9a9a9; /* Lighter text color for this section */
     object-fit: cover;
     box-sizing: border-box;
     margin: 0 auto;
     padding: 0 auto;
-
+    font-family: Arial, Helvetica, sans-serif;
 
 }
 
@@ -219,20 +228,20 @@ body {
     position: fixed; /* Ensures the navbar stays at the top when scrolling */
     top: 0%;
     width: 100%; /* Spans the full width of the viewport */
-    color: azure; /* Light text color for navbar links */
-    background-color: rgba(26, 26, 53, 0.3);   /* Darker navy background for the navbar */
+    color: #f1f1f1; /* Light text color for navbar links */
+    background-color: rgba(12, 24, 30, 0.55);   /* Darker navy background for the navbar */
     z-index: 3; /* Ensures the navbar stays above other content */
-    backdrop-filter: blur(10px); /* Adds a blur effect to the background */
-    -webkit-backdrop-filter: blur(10px); /* Safari support for backdrop blur */
-    border-bottom: 1px solid rgba(247, 244, 244, 0.3); /* Light border at the bottom */
+    backdrop-filter: blur(5px); /* Adds a blur effect to the background */
+    -webkit-backdrop-filter: blur(5px); /* Safari support for backdrop blur */
+    border-bottom: 1px solid rgba(247, 244, 244, 0.1); /* Light border at the bottom */
     transition: all ease-in-out 0.3s; /* Smooth transition for background color changes */
-    font-size: 1.2rem; /* Slightly larger font size for better readability */
+    font-size: 1rem; /* Slightly larger font size for better readability */
     font-weight: normal; /* Semi-bold font weight for emphasis */
     max-width: 100vw; /* Limits the maximum width of the navbar for large screens */
     left: 50%; /* Centers the navbar horizontally */
     transform: translateX(-50%); /* Centers the navbar horizontally */
     overflow: hidden; /* Prevents overflow of content */
-    gap: 0.5rem; /* Space between navbar items */
+    gap: 0.3rem; /* Space between navbar items */
     height: fit-content; /* Adjusts height based on content */
     min-height: 60px; /* Ensures a minimum height for the navbar */
   
@@ -252,46 +261,40 @@ body {
  .nav-link {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     text-align: center;
     width: 100%; /* Full width within its container */
-    color: aliceblue; /* Light blue text color */
+    color: #fffff7; 
     text-decoration: none; /* Removes underline from links */
     transition: all 0.3s ease; /* Smooth transition on hover */
-    font-size: 1.2rem; /* Slightly larger font size for better readability */
-    font-weight: normal; /* Semi-bold font weight for emphasis */
-    margin: 0 auto; /* Ensures padding and margin are applied correctly */
-    padding: 0.5rem;
-    box-shadow: 0 0.3px 0 0.3px rgba(255, 255, 255, 0.1); 
-    box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
-    background-color: #1a1e28; /* Dark background for links */
-    
+    font-size: 1.25rem; /* Slightly larger font size for better readability */
+    font-weight: 500; /* Semi-bold font weight for emphasis */
+   
 }
 
 /* Hover effect for navigation links */
  .nav-link:hover {
-   background-color: #1a202c;/* Slightly lighter background on hover */
-   color: azure;/* Different text color on hover */
+   background-color: rgba(12, 16, 21, 0.33);   
    transform: scale(1.05); /* Slightly enlarge link on hover */
    text-decoration: none; /* Ensure no underline on hover */
-   box-shadow: 0 7px 12px rgba(180,180,255, 0.75); 
-
+   box-shadow: 0 3px 5px rgba(180,180,240, 0.75); 
+   border-radius: 20px;
 
 }
 
  .nav-link:active {
-    color: rgb(48, 4, 48);
-    background-color: #1a202c; /* Darker background on active state */
-    box-shadow: 0 3px 5px rgba(180,180,255, 0.75);  /* Subtle shadow on active state */
-    transform: scale(1.0); /* Slightly reduce size on active state */
+    color: #eee; /* Light text color for navbar links */
+    background-color: rgba(0, 0, 0, 0.75);   /* Darker navy background for the navbar */
+    box-shadow: 0 3px 5px rgba(180,180, 180, 0.75);  /* Subtle shadow on active state */
+    transform: scale(0.95); /* Slightly reduce size on active state */
     text-decoration: none; /* Ensure no underline on active state */
 
 
 
 }
  .nav-link:visited {
-  color: azure;
+  color: #eed;
   text-decoration: none; /* Ensure no underline on visited links */
 
  }
@@ -326,13 +329,24 @@ body {
         }
 
 .pt-4 {
-  color: #e2e8f0;
-  font-family: 'Times New Roman', Times, serif;
-  font-size: larger;
+  display: inline-block;
+  position: relative;
+  color: # !important;
+  font-family: Arial, Helvetica, sans-erif;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 2px;
+  margin: 2px;
+  align-item: center;
+  justify-content: center;
+  
+  
 }
  .pt-4:hover {
-  color: azure;
-  transform: scale(0.95);
+  color: seagreen !important;
+  transform: scale(1.05);
+  text-transform: uppercase;
+  font-weight: large;
  }
 
 /* Project image styles */
@@ -358,48 +372,52 @@ body {
  .work, #project-title, .certificate {
     display: flex;
     flex-direction: column;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 2rem;
+    font-weight: bold;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     flex-wrap: nowrap;
-    color: azure; /* Lighter text color for this section */
+    color: #a9a9a9; /* Lighter text color for this section */
   
 
  }
 
   #project-title:hover {
-    color: aqua;
+    color: #808080;
     transition: all 0.3s ease-in-out;
     transform: scale(0.9);
-    text-shadow: 0 3px 5px rgba(255, 255, 255, 0.9);
+    text-shadow: 0 3px 5px rgba(255, 255, 255, 0.5);
   }
    figcaption {
     text-align: center;
     justify-content: center;
     font-family: Arial, Helvetica, sans-serif
    }
+#Contact {
+  color: #a9a9a9 !important;
+  }
    footer{
     width: 100%; /* Spans the full width of the viewport */
-    color: azure; /* Light text color for navbar links */
-    background-color: rgba(26, 26, 53, 0.3);   /* Darker navy background for the navbar */
+    color: #eed; /* Light text color for navbar links */
+    background-color: rgba(12, 24, 32, 0.55);   /* Darker navy background for the navbar */
     z-index: 3; /* Ensures the navbar stays above other content */
-    border-top: 1px solid rgba(247, 244, 244, 0.3); /* Light border at the bottom */
+    border-top: 1px solid rgba(247, 244, 244, 0.1); /* Light border at the bottom */
     height: auto;
     margin: 0 auto;
-    padding: 10px;
+    padding: 0 auto;
    }
   
     .certificate {
-      font-family: 'Times New Roman', Times, serif;
+      font-family: Arial, Helvetica, sans-serif;
       font-size: 2rem;
       font-weight: bold;
       justify-content: center;
       align-items: center;
       overflow: hidden;
       flex-wrap: nowrap;
-      color: azure; /* Lighter text color for this section */
+      color: #808080; /* Lighter text color for this section */
       object-fit: cover;
       box-sizing: border-box;
       margin: 0 auto;
@@ -412,13 +430,15 @@ body {
     padding: 80px 20px;
     text-align: center;
     background-color: var(--bg-dark);
-    color: var(--text-light);
+   
 }
 
 .skills-section h2 {
-    color: var(--highlight-azure); /* Azure title */
-    margin-bottom: 50px;
-    font-size: 2.5rem;
+    color: #808080;
+    margin: 0 auto;
+    font-size: 2.25rem;
+    font-weight: bold;
+    front-family: Arial, Helvetica, sans-serif;
 }
 
 /* Category Headers */
@@ -434,7 +454,7 @@ body {
 
 /* 2. Responsive Layout using CSS Grid for Categories */
 .skills-grid-container {
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
     /* Optional: Use grid to stack categories nicely on desktop */
     display: grid;
@@ -456,7 +476,7 @@ body {
     border-radius: 8px;
     text-align: left;
     /* subtle shadow by default */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2); 
     border-left: 5px solid var(--highlight-azure); /* Highlight border */
 
     /* Animation initial state */
@@ -472,7 +492,7 @@ body {
 /* 4. Hover Effect: Light Box Shadow (Azure Tint) & Background change */
 .skill-card:hover {
     /* Subtle background change */
-    background-color: #2a2a2a; 
+    background-color: #3a3a3a; 
     /* Light Azure-tinted box shadow */
     box-shadow: 0 0 20px 5px var(--shadow-color); 
     transform: translateY(-3px); /* Subtle lift */
@@ -529,8 +549,7 @@ body {
     #navbar {
         width: 100%; /* Full width within its container */
         left: 50%;
-        margin: 0;
-        padding: 0;
+        margin: 0 auto;
        
     }
     .nav-list {
@@ -555,12 +574,12 @@ body {
         align-items: center; /* Center stacked links */
         justify-content: center;
         text-align: center;
-        padding: 0.3rem  0.75rem; /* Add vertical padding */
-        margin-top: 0.7rem;
+        padding: 0.4rem  0.5rem; /* Add vertical padding */
+        margin-top: 0.5rem;
     }
     .nav-link:hover {
-      transform: scale(1.05);
-      box-shadow: 0 5px 7px rgba(246, 245, 245, 0.75); /* Add shadow on hover */
+      transform: scale(1.0);
+      box-shadow: 0 3px 5px rgba(246, 245, 245, 0.7); /* Add shadow on hover */
     }
   
      #Certs, #Project {
@@ -586,9 +605,9 @@ body {
         align-items: center; /* Center stacked links */
         justify-content: center;
         text-align: center;
-        padding: 0.3rem  0.75rem; /* Add vertical padding */
-        font-size: 0.9rem;     
-        margin-top: 0.7rem;
+        padding: 0.4rem  0.5rem; /* Add vertical padding */
+        font-size: 1rem;     
+        margin-top: 0.5rem;
     }
         }
 
@@ -596,7 +615,7 @@ body {
         @media (min-width: 1024px) {
             .container {
                  /* Fixed 3-column layout on large screens */
-                grid-template-columns: repeat(3, 1fr);
+                grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             }
 
         }

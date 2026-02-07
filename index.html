@@ -6,7 +6,7 @@
       <title>My Personal Portfolio</title>
       <!-- Load Tailwind CSS CDN for styling -->
       <script src="https://cdn.tailwindcss.com"></script>
-    
+      <script src="index.js"></script>
       <!-- Load Font Awesome 6.x CDN for icons (MANDATORY for social icons) -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJc5wF5T7wJ9Z9R5zN/M0Ew3C6e5P5zR5e5zC6p5zN5w5zC5w5zN5w5zC5w5zN5w5zC5w5zN5w5zC5w5zN5w5zC5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -28,43 +28,45 @@
 
         /* Glassmorphism Card Style */
         .glass-card {
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px); /* Strong blur */
-            -webkit-backdrop-filter: blur(15px);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px); /* Strong blur */
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 9px 18px rgba(0, 0, 24, 0.3);
             transition: background-color 0.8s, border 0.8s, box-shadow 0.8s;
         }
         
         /* Social Icon Hover Effect */
         .social-icon {
             transition: all 0.3s ease-in-out;
-            text-shadow: 0 0 5px var(--primary-color);
+            text-shadow: 0 7px 15px rgba(255, 255, 255, 1) !important;
         }
         .social-icon:hover {
             transform: translateY(-3px) scale(1.2);
-            color: var(--primary-color) !important;
-            text-shadow: 0 0 10px var(--primary-color);
+            color: #fff !important;
+              text-shadow: 0 7px 15px rgba(25, 25, 120, 0.75) !important;
         }
 
           /* Light Glassmorphism Effect for Cards */
         .cert-card {
-            background-color: rgba(255, 255, 255, 0.08); /* Light transparent background */
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            border: 1px solid rgba(255, 255, 255, 0.15); /* Subtle border */
+            background-color: rgba(255, 255, 255, 0.01); /* Light transparent background */
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05); /* Subtle border */
             transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
         }
 
         .cert-card:hover {
-            transform: translateY(-6px); /* Pronounced lift effect */
-            box-shadow: 0 12px 25px rgba(115, 241, 147, 0.25); /* Lime Green glow shadow */
-            border-color: rgba(162, 237, 181, 0.4);
+            transform: translateY(-5px); /* Pronounced lift effect */
+            box-shadow: 0 9px 18px rgba(115, 241, 240, 0.2); /* Lime Green glow shadow */
+            border-color: rgba(162, 200,210, 0.1);
+           
         }
+       
         
         /* Custom badge styling - Lime Green/Yellow */
         .badge-icon {
             color: #09cde3; /* Lime green */
-            text-shadow: 0 0px 5px rgba(136, 161, 185, 0.8);
+            text-shadow: 0 0px 5px rgba(136, 161, 185, 0.7);
         }
     </style>
     </head>
@@ -80,14 +82,14 @@
             <li><a href="#Certs" class="nav-link">Certs</a></li>
             <li><a href="#Project" class="nav-link">Project</a></li>
             <li><a href="#Contact" class="nav-link">Contact</a></li>
-          </ul>
-        </nav>
+            <li><button id="theme-toggle" class="dark">DM</button></li>
+            </ul>
+         </nav>
     </header>
         <!-- This section will take up the full height of the viewport -->
     <main class="main-container">
-
        <section id="Home" class="welcome-section">
-            <div id="Portfolio">
+       <div id="Portfolio">
                   <div class="hero-section">
                   </div>
 
@@ -106,12 +108,12 @@
        </section>
     
         <section id="About" 
-        class="w-full max-w-4xl bg-gray-750/80 p-6 sm:p-10 lg:p-16 rounded-xl transition-all duration-300 azure-glow">
+        class="w-full max-w-4xl bg-gray-750/80 p-6 sm:p-10 lg:p-16 rounded-xl transition-all duration-300 light-gray-glow">
         
         <!-- Header Block -->
         <div class="text-center mb-10 sm:mb-14">
             <!-- H2: Sub-role and focus -->
-            <h2 class="mt-3 text-4xl sm:text-3xl text-azure-650 font-bold">
+            <h2 class="mt-3 text-4xl sm:text-3xl text-gray-500 font-bold">
                 Digital Craftsperson & UX Advocate.
             </h2>
         </div>
@@ -120,45 +122,45 @@
         <div class="space-y-8">
             
             <!-- Unique block quote style P element -->
-            <blockquote class="relative border-l-8 border-cyan-500 pl-6 sm:pl-8 py-2">
-                <p class="text-1xl sm:text-2xl font-extralight italic text-gray-200">
+            <blockquote class="relative border-l-8 border-lightblue-900 pl-6 sm:pl-8 py-2">
+                <p class="text-1xl sm:text-2xl font-extralight italic text-gray-500">
                     "I build what users touch. That requires more than just code; it demands deep proficiency in **HTML, CSS, and JavaScript** to guarantee performance, accessibility, and pixel precision."
                 </p>
             </blockquote>
 
             <!-- Supporting P element -->
-            <p class="text-lg text-gray-400 leading-relaxed max-w-3xl mx-auto">
+            <p class="text-lg text-gray-500 leading-relaxed max-w-3xl mx-auto">
                 My commitment is to efficient, reusable code. I translate complex user stories into fluid, responsive experiences, relying on modern tooling like **React, Tailwind, and Vite** to maximize development velocity without sacrificing stability.
             </p>
         </div>
 
         <!-- Core Competencies (h and p elements) -->
-        <div class="mt-12 pt-8 border-t border-gray-700">
-            <h3 class="text-xl font-bold text-gray-100 mb-4 text-center uppercase tracking-wider">
+        <div class="mt-12 pt-8 border-t border-gray-500">
+            <h3 class="text-xl font-bold text-gray-500 mb-4 text-center uppercase tracking-wider">
                 Key Deliverables
             </h3>
             
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
                 
                 <!-- Deliverable 1 -->
-                <div class="p-4 rounded-lg bg-gray-800/70 hover:bg-gray-700/80 transition duration-300 border border-gray-700">
-                    <h4 class="text-lg font-semibold text-cyan-400">Fluid Layouts</h4>
+                <div class="p-4 rounded-lg bg-gray-800/70 hover:bg-gray-700/80 transition duration-300 border border-gray-500">
+                    <h4 class="text-lg font-semibold text-gray-500">Fluid Layouts</h4>
                     <p class="text-sm text-gray-400 mt-1">
                         Adaptive design for every viewport.
                     </p>
                 </div>
                 
                 <!-- Deliverable 2 -->
-                <div class="p-4 rounded-lg bg-gray-800/70 hover:bg-gray-700/80 transition duration-300 border border-gray-700">
-                    <h4 class="text-lg font-semibold text-cyan-400">Optimized Performance</h4>
+                <div class="p-4 rounded-lg bg-gray-800/70 hover:bg-gray-700/80 transition duration-300 border border-gray-400">
+                    <h4 class="text-lg font-semibold text-gray-500">Optimized Performance</h4>
                     <p class="text-sm text-gray-400 mt-1">
                         Sub-second load times and smooth transitions.
                     </p>
                 </div>
 
                 <!-- Deliverable 3 -->
-                <div class="p-4 rounded-lg bg-gray-800/70 hover:bg-gray-700/80 transition duration-300 border border-gray-700">
-                    <h4 class="text-lg font-semibold text-cyan-400">Accessibility (A11y)</h4>
+                <div class="p-4 rounded-lg bg-gray-800/70 hover:bg-gray-700/80 transition duration-300 border border-gray-500">
+                    <h4 class="text-lg font-semibold text-gray-500">Accessibility (A11y)</h4>
                     <p class="text-sm text-gray-400 mt-1">
                         Inclusive design for all users.
                     </p>
@@ -261,10 +263,10 @@
                     <!-- H2: Certification Name -->
                     <h3 class="text-4xl mb-4 badge-icon">Responsive Web Design Certification</h3>
                  <!-- P: Issuing Authority & Focus -->
-                <p class="text-gray-400 text-sm">
+                <p class="text-gray-500 text-sm">
                     Authority: **freeCodeCamp**
                 </p>
-                <p class="text-gray-300 mt-4 leading-relaxed">
+                <p class="text-gray-400 mt-4 leading-relaxed">
                     Verified mastery of **CSS Grid**, **Flexbox**, and Media Queries to architect layouts that adapt seamlessly to any device or screen size. This foundational certificate covers five key projects ensuring practical application of responsive principles.
                 </p>
                 <!-- H3: Completion Detail -->
@@ -281,10 +283,10 @@
                 <!-- H2: Certification Name -->
                 <h3 class="text-4xl mb-4 badge-icon">Front End Development Libraries</h3>
                 <!-- P: Issuing Authority & Focus -->
-                <p class="text-gray-400 text-sm">
+                <p class="text-gray-500 text-sm">
                     Authority: **freeCodeCamp**
                 </p>
-                <p class="text-gray-300 mt-3 leading-relaxed">
+                <p class="text-gray-400 mt-3 leading-relaxed">
                     Deep dive into modern state management and component-based architecture using **React** and **Redux**.
                 </p>
                 <!-- H3: Completion Detail -->
@@ -300,10 +302,10 @@
                 </div>
                 <h3>JavaScript Algorithms and Data Structures</h3>
             </div>
-            <p class="text-gray-400 text-sm">
+            <p class="text-gray-500 text-sm">
                 Authority: **freeCodeCamp**
             </p>
-            <p class="text-gray-300 leading-relaxed">
+            <p class="text-gray-400 leading-relaxed">
                 Mastery of core JavaScript concepts, including ES6 features, functional programming, and solving complex algorithmic challenges.
             </p>
             <h4 class="text-sm font-semibold mt-4 text-lime-300">
@@ -319,10 +321,10 @@
                 <!-- H2: Certification Name -->
                 <h3 class="text-4xl mb-4 badge-icon">Advanced Framework Specialization</h3>
                 <!-- P: Issuing Authority & Focus -->
-                <p class="text-gray-400 text-sm">
+                <p class="text-gray-500 text-sm">
                     Authority: **Global Dev Academy**
                 </p>
-                <p class="text-gray-300 mt-3 leading-relaxed">
+                <p class="text-gray-400 mt-3 leading-relaxed">
                     Specialized training in complex application structure, reactive programming, and testing with the **Angular Framework**.
                 </p>
                 <!-- H3: Completion Detail -->
@@ -339,10 +341,10 @@
                 <!-- H2: Certification Name -->
                 <h3 class="text-4xl mb-4 badge-icon">Web Accessibility (A11Y) Expert</h3>
                 <!-- P: Issuing Authority & Focus -->
-                <p class="text-gray-400 text-sm">
+                <p class="text-gray-500 text-sm">
                     Authority: **UX Standards Institute**
                 </p>
-                <p class="text-gray-300 mt-3 leading-relaxed">
+                <p class="text-gray-400 mt-3 leading-relaxed">
                     Commitment to inclusive development, verified mastery of **WCAG 2.1** and practical **ARIA** implementation.
                 </p>
                 <!-- H3: Completion Detail -->
@@ -427,16 +429,16 @@
      <section id="Contact" class="reach">
      <!-- Main Contact Us Section -->
      <div class="flex-grow flex items-center justify-center p-3 sm:p-6">
-        <div class="glass-card w-full max-w-l p-6 sm:p-9 rounded-[1rem]">
+        <div class="glass-card w-full max-w-xl p-7 sm:p-12 rounded-[1rem]">
             
-            <header class="text-center mb-9">
+            <div class="text-center mb-9">
                 <h2 class="text-2xl sm:text-3xl font-extrabold text-[var(--secondery-color)]">
                     Get In Touch
                 </h2>
-                <p class="mt-3 text-lg text-aliceblue-600 light:text-gray-300">
+                <p class="mt-3 text-lg text-aliceblue-500 light:text-gray-400">
                     Let's collaborate and build something exceptional.
                 </p>
-            </header>
+            </div>
 
             <form class="space-y-5">
                 <!-- Name and Email fields in a responsive grid -->
@@ -451,7 +453,7 @@
                         <input type="email" id="email" required 
                             class="mt-1 block w-full p-3 border border-gray-400/30 dark:border-gray-600/50 rounded-xl bg-[var(--input-bg)] focus:ring-2 focus:ring-[var(--primary-color)] focus:border-[var(--primary-color)] transition duration-300 text-[var(--text-color)] placeholder-gray-500">
                     </div>
-                </div>
+                
 
                 <!-- Message field -->
                 <div>
@@ -460,20 +462,23 @@
                         class="mt-1 block w-full p-3 border border-gray-400/30 dark:border-gray-600/50 rounded-xl bg-[var(--input-bg)] focus:ring-2 focus:ring-[var(--primary-color)] focus:border-[var(--primary-color)] transition duration-300 text-[var(--text-color)] placeholder-gray-500"></textarea>
                 </div>
 
-                <!-- Submit Button -->
+          <!-- Submit Button -->
+
                 <div class="pt-4">
-                    <button type="submit" class="w-full py-4 px-4 rounded-xl text-white font-bold tracking-wider 
+
+                    <button type="submit" class="w-full py-4 px-4 rounded-xl text-lightblue font-bold tracking-wider 
+
                         bg-[var(--secondery-color)] hover:opacity-90 transition duration-300 shadow-xl 
-                        hover:shadow-[0_0_15px_0_rgba(60,100,250,0.5)] dark:hover:shadow-[0_0_15px_0_rgba(120,120,120,0.7)]">
-                        Submit
+
+                        hover:shadow-[0_0_12px_0_rgba(60,100,250,0.03)] dark:hover:shadow-[0_0_9px_0_rgba(120,120,120,0.03)]">Submit
                     </button>
-                </div>
+               </div>
             </form>
         </div>
      </div>
-     </section>   
-     <!--FOOTER SECTION with Font Awesome Links-->
-        <footer class="mt-6 py-4 transition-colors duration-400">
+     </section>
+     <!--FOOTER with Font Awesome Links-->
+        <footer class="mt-6 py-4 transition-colors duration-400"> 
           <div class="mx-auto px-4 text-center">
             
             <div class="flex justify-center space-x-8 mb-4">
@@ -509,8 +514,4 @@
     </main>
     </body>
 </html>
-<<<<<<< HEAD
-=======
 
-
->>>>>>> 915a1052e80198b67be4c7b21714cdae981fc147
