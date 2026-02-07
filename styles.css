@@ -33,7 +33,7 @@ body {
   overflow: hidden;
 }
 
-body.dark {
+body.dark:active {
   background-color: #1e1e1e;
   color: #e0e0e0;
 }
@@ -577,8 +577,7 @@ body.dark {
         align-items: center; /* Center stacked links */
         justify-content: center;
         text-align: center;
-        padding: 0.4rem; /* Add vertical padding */
-        margin-top: 0.5rem;
+        
     }
     .nav-link:hover {
       transform: scale(1.05);
@@ -608,9 +607,8 @@ body.dark {
         align-items: center; /* Center stacked links */
         justify-content: center;
         text-align: center;
-        padding: 0.4rem; /* Add vertical padding */
         font-size: 1rem;     
-        margin-top: 0.5rem;
+    
     }
         }
 
@@ -618,7 +616,7 @@ body.dark {
         @media (min-width: 1024px) {
             .container {
                  /* Fixed 3-column layout on large screens */
-                grid-template-columns: repeat(3, 300px);
+                grid-template-columns: repeat(2, 300px);
             }
               .nav-link {
         display: flex;
@@ -626,12 +624,11 @@ body.dark {
         align-items: center; /* Center stacked links */
         justify-content: center;
         text-align: center;
-        padding: 0.5rem; /* Add vertical padding */
         font-size: 1.25rem;
-        margin-top: 0.5rem;
               }
 
 
         }
+
 
 
