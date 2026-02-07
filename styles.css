@@ -33,7 +33,7 @@ body {
   overflow: hidden;
 }
 
-body.dark:active {
+body.dark {
   background-color: #1e1e1e;
   color: #e0e0e0;
 }
@@ -223,12 +223,18 @@ body.dark:active {
     font-family: Arial, Helvetica, sans-serif;
 
 }
-
+header {
+    margin: 0 auto;
+    padding: 0 auto;
+    width: 100vw;
+    position: fixed;
+}
 /* Navbar styles */
 #navbar {
     position: fixed; /* Ensures the navbar stays at the top when scrolling */
     top: 0%;
     width: 100%; /* Spans the full width of the viewport */
+    min-width: 100vw;
     color: #f1f1f1; /* Light text color for navbar links */
     background-color: rgba(12, 24, 32, 0.55);   /* Darker navy background for the navbar */
     z-index: 3; /* Ensures the navbar stays above other content */
@@ -372,7 +378,7 @@ body.dark:active {
     position: relative;
     flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 2rem;
+    font-size: 1.75rem;
     font-weight: bold;
     justify-content: center;
     align-items: center;
@@ -386,7 +392,7 @@ body.dark:active {
   #project-title:hover {
     color: #808080;
     transition: all 0.3s ease-in-out;
-    transform: scale(0.9);
+    transform: scale(0.95);
     text-shadow: 0 3px 5px rgba(255, 255, 255, 0.5);
   }
    figcaption {
@@ -399,6 +405,7 @@ body.dark:active {
   }
    footer{
     width: 100%; /* Spans the full width of the viewport */
+    min-width: 100vw;
     color: #eed; /* Light text color for navbar links */
     background-color: rgba(12, 24, 32, 0.55);   /* Darker navy background for the navbar */
     z-index: 3; /* Ensures the navbar stays above other content */
@@ -561,8 +568,9 @@ body.dark:active {
 
   }
    .container {
+           display: grid;
             padding: 2rem;
-            max-width: 1280px;
+            max-width: 900px;
             margin: 20px auto;
             align-items: center;
             justify-content: center;
@@ -629,6 +637,7 @@ body.dark:active {
 
 
         }
+
 
 
 
