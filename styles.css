@@ -1,3 +1,13 @@
+<<<<<<< HEAD
+=======
+/* CSS Variables for Dark Theme and Azure Text Color */
+:root {
+    --text-light: azure; /* Light text color */
+    --highlight-azure: #00ffff; /* Azure color for highlights */
+    --card-bg: rgba(255, 255, 255, 0.03); /* Dark card background */
+    --shadow-color: rgba(0, 160, 200, 0.3); /* Light azure shadow color */
+}
+>>>>>>> b76cc70d3b49904fff61c449efb69d2d45239fef
 /* Base body styles */
 body {
     width: 100%;
@@ -275,8 +285,14 @@ body.dark {
 
 /* Hover effect for navigation links */
  .nav-link:hover {
+<<<<<<< HEAD
    background-color: rgba(12, 16, 21, 0.33);   
    transform: scale(1.05); /* Slightly enlarge link on hover */
+=======
+   background-color: #1a202c;/* Slightly lighter background on hover */
+   color: azure;/* Different text color on hover */
+   transform: scale(1.02); /* Slightly enlarge link on hover */
+>>>>>>> b76cc70d3b49904fff61c449efb69d2d45239fef
    text-decoration: none; /* Ensure no underline on hover */
    box-shadow: 0 3px 5px rgba(180,180,240, 0.75); 
    border-radius: 20px;
@@ -284,10 +300,17 @@ body.dark {
 }
 
  .nav-link:active {
+<<<<<<< HEAD
     color: #eee; /* Light text color for navbar links */
     background-color: rgba(0, 0, 0, 0.75);   /* Darker navy background for the navbar */
     box-shadow: 0 3px 5px rgba(180,180, 180, 0.75);  /* Subtle shadow on active state */
     transform: scale(0.95); /* Slightly reduce size on active state */
+=======
+    color: purple;
+    background-color: #1a202c; /* Darker background on active state */
+    box-shadow: 0 3px 5px rgba(180,180,255, 0.75);  /* Subtle shadow on active state */
+    transform: scale(1.0); /* Slightly reduce size on active state */
+>>>>>>> b76cc70d3b49904fff61c449efb69d2d45239fef
     text-decoration: none; /* Ensure no underline on active state */
 
 
@@ -435,11 +458,18 @@ body.dark {
 }
 
 .skills-section h2 {
+<<<<<<< HEAD
     color: #808080;
     margin: 0 auto;
     font-size: 2.25rem;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
+=======
+    color: azure; /* Azure title */
+    margin: 0 auto;
+    font-size: 2.25rem;
+    font-weight: bold;
+>>>>>>> b76cc70d3b49904fff61c449efb69d2d45239fef
 }
 
 /* Category Headers */
@@ -582,8 +612,13 @@ body.dark {
         margin-top: 0.5rem;
     }
     .nav-link:hover {
+<<<<<<< HEAD
       transform: scale(1.0);
       box-shadow: 0 3px 5px rgba(246, 245, 245, 0.7); /* Add shadow on hover */
+=======
+      transform: scale(1.02);
+      box-shadow: 0 3px 5px rgba(246, 245, 245, 0.75); /* Add shadow on hover */
+>>>>>>> b76cc70d3b49904fff61c449efb69d2d45239fef
     }
   
      #Certs, #Project {
