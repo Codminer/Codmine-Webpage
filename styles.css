@@ -2,6 +2,10 @@
 body {
     width: 100%;
     height: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: grid;
+    grid-template-rows: 1fr auto;
     background-color: #fffff3;
     color: #888;
     font-family: Arial, Helvetica, sans-serif;
@@ -292,7 +296,7 @@ body.dark {background-color: #1e1e1e;
         justify-content: center;
         text-align: center;
          font-family: Arial, Helvetica, sans-serif;
-         font-size: 1.25rem;
+         font-size: 1.33rem;
         font-weight: 500;     
          padding: 0.5rem;
          margin: 0.5rem;
@@ -301,7 +305,7 @@ body.dark {background-color: #1e1e1e;
 /* Hover effect for navigation links */
  .nav-link:hover {
     color: #eee; /* Light text color for navbar links */
-   background-color: rgba(12, 16, 21, 0.33);   
+   background-color: rgba(12, 18, 32, 0.5);   
    transform: scale(1.05); /* Slightly enlarge link on hover */
    text-decoration: none; /* Ensure no underline on hover */
    box-shadow: 0 3px 5px rgba(180,180,240, 0.75); 
@@ -427,12 +431,10 @@ body.dark {background-color: #1e1e1e;
    footer {
     width: 100%; /* Spans the full width of the viewport */
     color: #eed; /* Light text color for navbar links */
-    background-color: rgba(12, 24, 32, 0.59);   /* Darker navy background for the navbar */
+    background-color: rgba(12, 18, 32, 0.60);   /* Darker navy background for the navbar */
     z-index: 3; /* Ensures the navbar stays above other content */
     border-top: 1px solid rgba(247, 244, 244, 0.1); /* Light border at the bottom */
-   position: fixed;
-   left: 0;
-   bottom: 0;
+    margin-top: auto;   
    text-align: center;
 }
    }
@@ -569,7 +571,7 @@ body.dark {background-color: #1e1e1e;
 }
 
 /* Styles for screens smaller than 768px (e.g., tablets in portrait, large phones) */
-@media (min-width: 768px) {
+@media (max-width: 768px) {
     body {
         width: 100%;
         height: 100%;
@@ -615,15 +617,14 @@ body.dark {background-color: #1e1e1e;
         justify-content: center;
         text-align: center;
          font-family: Arial, Helvetica, sans-serif;
-         font-size: 1.25rem;
+         font-size: 1.33rem;
         font-weight: 500;     
          padding: 0.5rem;
          margin: 0.5rem;
-       
     }
     .nav-link:hover {
    color: #eee; /* Light text color for navbar links */
-   background-color: rgba(12, 16, 21, 0.33);   
+   background-color: rgba(12, 16, 32, 0.4);   
    transform: scale(1.05); /* Slightly enlarge link on hover */
    text-decoration: none; /* Ensure no underline on hover */
    box-shadow: 0 3px 5px rgba(180,180,240, 0.75); 
@@ -634,23 +635,22 @@ body.dark {background-color: #1e1e1e;
      footer {
     width: 100%; /* Spans the full width of the viewport */
     color: #eed; /* Light text color for navbar links */
-    background-color: rgba(12, 24, 32, 0.59);   /* Darker navy background for the navbar */
+    background-color: rgba(12, 18, 32, 0.60);   /* Darker navy background for the navbar */
     z-index: 3; /* Ensures the navbar stays above other content */
     border-top: 1px solid rgba(247, 244, 244, 0.1); /* Light border at the bottom */
-   position: fixed;
-   left: 0;
-   bottom: 0;
+    margin-top: auto;   
    text-align: center;
 }
   
   }
 
    /* Small Devices / Tablets (sm: >= 480px) */
-        @media (min-width: 480px) {
+        @media (min-width: 580px) {
             .container {
                 /* Auto-fit: as many 300px columns as possible */
-                grid-template-columns: repeat(2, 300px);
-                padding: 1.5rem;
+                grid-template-columns: repeat(2, 260px);
+                padding: 1rem;
+                margin: 0 auto;
             }
              #navbar {
         positin: fixed;        
@@ -667,16 +667,15 @@ body.dark {background-color: #1e1e1e;
         justify-content: center;
         text-align: center;
          font-family: Arial, Helvetica, sans-serif;
-         font-size: 1.25rem;
+         font-size: 1.33rem;
         font-weight: 500;     
          padding: 0.5rem;
          margin: 0.5rem;
-       
     }
     
 .nav-link:hover {
    color: #eee; /* Light text color for navbar links */
-   background-color: rgba(12, 16, 21, 0.33);   
+   background-color: rgba(12, 16, 32, 0.5);   
    transform: scale(1.05); /* Slightly enlarge link on hover */
    text-decoration: none; /* Ensure no underline on hover */
    box-shadow: 0 3px 5px rgba(180,180,240, 0.75); 
@@ -700,29 +699,25 @@ body.dark {background-color: #1e1e1e;
         overflow-x: hidden; /* Prevent horizontal scroll on large devices */
        
     }
-
-           .nav-link {
+.nav-link {
         display: inline-block;
         flex-direction: row; /* Stack navbar links vertically */
         align-items: center; /* Center stacked links */
         justify-content: center;
         text-align: center;
          font-family: Arial, Helvetica, sans-serif;
-         font-size: 1.25rem;
+         font-size: 1.33rem;
         font-weight: 500;     
          padding: 0.5rem;
          margin: 0.5rem;
-       
-    }
+}
 footer {
     width: 100%; /* Spans the full width of the viewport */
     color: #eed; /* Light text color for navbar links */
-    background-color: rgba(12, 24, 32, 0.59);   /* Darker navy background for the navbar */
+    background-color: rgba(12, 18, 32, 0.60);   /* Darker navy background for the navbar */
     z-index: 3; /* Ensures the navbar stays above other content */
     border-top: 1px solid rgba(247, 244, 244, 0.1); /* Light border at the bottom */
-   position: fixed;
-   left: 0;
-   bottom: 0;
+    margin-top: auto;   
    text-align: center;
 }
         }
