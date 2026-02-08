@@ -1,3 +1,4 @@
-document.getElementById('theme-toggle').addEventListener('click', () => {
-  document.body.classList.toggle('dark');
+const checkbox = document.getElementById("checkbox")
+checkbox.addEventListener("change", () => {
+  document.body.classList.toggle("dark")
 });

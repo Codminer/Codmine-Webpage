@@ -1,13 +1,4 @@
-<<<<<<< HEAD
-=======
-/* CSS Variables for Dark Theme and Azure Text Color */
-:root {
-    --text-light: azure; /* Light text color */
-    --highlight-azure: #00ffff; /* Azure color for highlights */
-    --card-bg: rgba(255, 255, 255, 0.03); /* Dark card background */
-    --shadow-color: rgba(0, 160, 200, 0.3); /* Light azure shadow color */
-}
->>>>>>> b76cc70d3b49904fff61c449efb69d2d45239fef
+
 /* Base body styles */
 body {
     width: 100%;
@@ -26,27 +17,57 @@ body {
     object-fit: cover;
 
 }
+/* Importing Google Font: Montserrat */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
-#theme-toggle {
-  display: inline-block;
+* {box-sizing: border-box;}
+/* Dark mode styles */
+body.dark {background-color: #1e1e1e; 
+  color: #e0e0e0;} 
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+.toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+.checkbox-label {
+  background-color: #111;
+  width: 50px;
+  height: 26px;
+  border-radius: 50px;
   position: relative;
-  color: #fffff3;
-  font-weight: bold;
-  background-color: none;
-  padding: 0.34rem;
-  font-size: 2rem;
+  padding: 5px;
   cursor: pointer;
-  margin: 0 auto;
-  z-index: 10;
-  transition: background 0.2s, color 0.2s;
-  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-body.dark {
-  background-color: #1e1e1e;
-  color: #e0e0e0;
+.fa-moon {color: #f1c40f;}
+
+.fa-sun {color: #f39c12;}
+
+.checkbox-label .ball {
+  background-color: #fff;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
 }
 
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(24px);
+}
+/* Hero section styles */
         .hero-section {
             width: 100%;
             height: 100vh;
@@ -254,6 +275,7 @@ body.dark {
     gap: 0.3rem; /* Space between navbar items */
     height: fit-content; /* Adjusts height based on content */
     min-height: 60px; /* Ensures a minimum height for the navbar */
+    
   
 }
 /* Styles for the unordered list within the navbar */
@@ -269,7 +291,7 @@ body.dark {
 
 /* Styles for navigation links */
  .nav-link {
-    display: flex;
+    display: inline-block;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
@@ -280,12 +302,16 @@ body.dark {
     transition: all 0.3s ease; /* Smooth transition on hover */
     font-size: 1.25rem; /* Slightly larger font size for better readability */
     font-weight: 500; /* Semi-bold font weight for emphasis */
+    padding: 0.5rem; /* Increased padding for better click */
+    margin: 0.5rem; /* Space between links */
+    border-radius: 8px; /* Rounded corners for a softer look */
+    box-sizing: border-box; /* Ensures padding and border are included in the total width */
    
 }
 
 /* Hover effect for navigation links */
  .nav-link:hover {
-<<<<<<< HEAD
+    color: #eee; /* Light text color for navbar links */
    background-color: rgba(12, 16, 21, 0.33);   
    transform: scale(1.05); /* Slightly enlarge link on hover */
    text-decoration: none; /* Ensure no underline on hover */
@@ -295,17 +321,12 @@ body.dark {
 }
 
  .nav-link:active {
-<<<<<<< HEAD
+
     color: #eee; /* Light text color for navbar links */
     background-color: rgba(0, 0, 0, 0.75);   /* Darker navy background for the navbar */
     box-shadow: 0 3px 5px rgba(180,180, 180, 0.75);  /* Subtle shadow on active state */
     transform: scale(0.95); /* Slightly reduce size on active state */
-=======
-    color: purple;
-    background-color: #1a202c; /* Darker background on active state */
-    box-shadow: 0 3px 5px rgba(180,180,255, 0.75);  /* Subtle shadow on active state */
-    transform: scale(1.0); /* Slightly reduce size on active state */
->>>>>>> b76cc70d3b49904fff61c449efb69d2d45239fef
+
     text-decoration: none; /* Ensure no underline on active state */
 
 
@@ -426,6 +447,7 @@ body.dark {
     height: auto;
     margin: 0 auto;
     padding: 0 auto;
+    overflow: hidden; /* Prevent horizontal scroll on small devices */
    }
   
     .certificate {
@@ -453,18 +475,13 @@ body.dark {
 }
 
 .skills-section h2 {
-<<<<<<< HEAD
+
     color: #808080;
     margin: 0 auto;
     font-size: 2.25rem;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
-=======
-    color: azure; /* Azure title */
-    margin: 0 auto;
-    font-size: 2.25rem;
-    font-weight: bold;
->>>>>>> b76cc70d3b49904fff61c449efb69d2d45239fef
+
 }
 
 /* Category Headers */
@@ -576,6 +593,7 @@ body.dark {
         width: 100%; /* Full width within its container */
         left: 50%;
         margin: 0 auto;
+        overflow-x: hidden; /* Prevent horizontal scroll on small devices */
        
     }
     .nav-list {
@@ -598,22 +616,21 @@ body.dark {
 
   
     .nav-link {
-        display: flex;
+        display: inline-block;
         flex-direction: row; /* Stack navbar links vertically */
         align-items: center; /* Center stacked links */
         justify-content: center;
         text-align: center;
-        padding: 0.4rem; /* Add vertical padding */
-        margin-top: 0.5rem;
+        padding: 0.5rem; /* Increased padding for better click */
+        margin: 0.5rem; /* Space between links */
+        border-radius: 8px; /* Rounded corners for a softer look */
+        box-sizing: border-box; /* Ensures padding and border are included in the total width */
     }
     .nav-link:hover {
-<<<<<<< HEAD
+      background-color: rgba(12, 16, 21, 0.33);
       transform: scale(1.0);
       box-shadow: 0 3px 5px rgba(246, 245, 245, 0.7); /* Add shadow on hover */
-=======
-      transform: scale(1.02);
-      box-shadow: 0 3px 5px rgba(246, 245, 245, 0.75); /* Add shadow on hover */
->>>>>>> b76cc70d3b49904fff61c449efb69d2d45239fef
+
     }
   
      #Certs, #Project {
@@ -624,6 +641,18 @@ body.dark {
       object-fit: cover;
     
      }
+     footer{
+    width: 100vw; /* Spans the full width of the viewport */
+    color: #eed; /* Light text color for navbar links */
+    background-color: rgba(12, 24, 32, 0.55);   /* Darker navy background for the navbar */
+    z-index: 3; /* Ensures the navbar stays above other content */
+    border-top: 1px solid rgba(247, 244, 244, 0.1); /* Light border at the bottom */
+    height: auto;
+    margin: 0 auto;
+    padding: 0 auto;
+    overflow-x: hidden; /* Prevent horizontal scroll on small devices */
+   }
+  
   }
 
    /* Small Devices / Tablets (sm: >= 480px) */
@@ -633,16 +662,37 @@ body.dark {
                 grid-template-columns: repeat(2, 200px);
                 padding: 1.5rem;
             }
+             #navbar {
+        width: 100%; /* Full width within its container */
+        left: 50%;
+        margin: 0 auto;
+        overflow-x: hidden; /* Prevent horizontal scroll on small devices */
+       
+    }
            .nav-link {
-        display: flex;
+        display: inline-block;
         flex-direction: row; /* Stack navbar links vertically */
         align-items: center; /* Center stacked links */
         justify-content: center;
         text-align: center;
-        padding: 0.4rem; /* Add vertical padding */
-        font-size: 1rem;     
-        margin-top: 0.5rem;
+        padding: 0.5rem; /* Increased padding for better click */
+        margin: 0 0.5rem; /* Space between links */
+        border-radius: 8px; /* Rounded corners for a softer look */
+        box-sizing: border-box; /* Ensures padding and border are included in the total width */
+       
     }
+    footer{
+    width: 100vw; /* Spans the full width of the viewport */
+    color: #eed; /* Light text color for navbar links */
+    background-color: rgba(12, 24, 32, 0.55);   /* Darker navy background for the navbar */
+    z-index: 3; /* Ensures the navbar stays above other content */
+    border-top: 1px solid rgba(247, 244, 244, 0.1); /* Light border at the bottom */
+    height: auto;
+    margin: 0 auto;
+    padding: 0 auto;
+    overflow-x: hidden; /* Prevent horizontal scroll on small devices */
+   }
+  
         }
 
          /* Large Devices / Large Desktops (lg: >= 1024px) */
@@ -651,17 +701,36 @@ body.dark {
                  /* Fixed 3-column layout on large screens */
                 grid-template-columns: repeat(3, 300px);
             }
-              .nav-link {
-        display: flex;
+             #navbar {
+        width: 100%; /* Full width within its container */
+        left: 50%;
+        margin: 0 auto;
+        overflow-x: hidden; /* Prevent horizontal scroll on large devices */
+       
+    }
+     .nav-link {
+        display: inline-block;
         flex-direction: row; /* Stack navbar links vertically */
         align-items: center; /* Center stacked links */
         justify-content: center;
         text-align: center;
-        padding: 0.5rem; /* Add vertical padding */
-        font-size: 1.25rem;
-        margin-top: 0.5rem;
-              }
-
-
+        padding: 0.5rem; /* Increased padding for better click */
+        margin: 0.5rem; /* Space between links */
+        border-radius: 8px; /* Rounded corners for a softer look */
+        box-sizing: border-box; /* Ensures padding and border are included in the total width */
+       
+    }
+    footer{
+    width: 100vw; /* Spans the full width of the viewport */
+    color: #eed; /* Light text color for navbar links */
+    background-color: rgba(12, 24, 32, 0.55);   /* Darker navy background for the navbar */
+    z-index: 3; /* Ensures the navbar stays above other content */
+    border-top: 1px solid rgba(247, 244, 244, 0.1); /* Light border at the bottom */
+    height: auto;
+    margin: 0 auto;
+    padding: 0 auto;
+    overflow-x: hidden; /* Prevent horizontal scroll on large devices */
+   }
+  
         }
 
