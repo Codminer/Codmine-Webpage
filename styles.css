@@ -2,10 +2,8 @@
 body {
     width: 100%;
     height: 100%;
+    min-width: 100vw;
     min-height: 100vh;
-    min-height: 100dvh;
-    display: grid;
-    grid-template-rows: 1fr auto;
     background-color: #fffff3;
     color: #888;
     font-family: Arial, Helvetica, sans-serif;
@@ -334,7 +332,7 @@ body.dark {background-color: #1e1e1e;
   .container {
      display: grid;
      margin: 2rem; /* Equivalent to Tailwind gap-6 */
-     padding: 1rem; /* Equivalent to Tailwind p-4 */
+     padding: 2rem; /* Equivalent to Tailwind p-4 */
   } 
 
 /* Project-box styles */
@@ -428,14 +426,21 @@ body.dark {background-color: #1e1e1e;
 #Contact {
   color: #a9a9a9 !important;
   }
-   footer {
-    width: 100%; /* Spans the full width of the viewport */
-    color: #eed; /* Light text color for navbar links */
-    background-color: rgba(12, 18, 32, 0.60);   /* Darker navy background for the navbar */
-    z-index: 3; /* Ensures the navbar stays above other content */
-    border-top: 1px solid rgba(247, 244, 244, 0.1); /* Light border at the bottom */
-    margin-top: auto;   
-   text-align: center;
+   .wrapper {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+
+footer {
+  background-color: rgba(75, 72, 76, 0.75);
+  color: white;
+  padding: 20px;
+  margin-top: auto;
+  text-align: center;
+  justify-content: center;
+  
 }
    }
   
@@ -632,58 +637,24 @@ body.dark {background-color: #1e1e1e;
     }
   
      
-     footer {
-    width: 100%; /* Spans the full width of the viewport */
-    color: #eed; /* Light text color for navbar links */
-    background-color: rgba(12, 18, 32, 0.60);   /* Darker navy background for the navbar */
-    z-index: 3; /* Ensures the navbar stays above other content */
-    border-top: 1px solid rgba(247, 244, 244, 0.1); /* Light border at the bottom */
-    margin-top: auto;   
-   text-align: center;
+     .wrapper {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+
+footer {
+  background-color: rgba(75, 72, 76, 0.75);
+  color: white;
+  padding: 20px;
+  margin-top: auto;
+  text-align: center;
+  justify-content: center;
+  
 }
   
   }
-
-   /* Small Devices / Tablets (sm: >= 480px) */
-        @media (min-width: 580px) {
-            .container {
-                /* Auto-fit: as many 300px columns as possible */
-                grid-template-columns: repeat(2, 260px);
-                padding: 1rem;
-                margin: 0 auto;
-            }
-             #navbar {
-        positin: fixed;        
-        width: 100%; /* Full width within its container */
-        left: 50%;
-        top: 0;       
-        overflow-x: hidden; /* Prevent horizontal scroll on small devices */
-       
-    }
-           .nav-link {
-        display: inline-block;
-        flex-direction: row; /* Stack navbar links vertically */
-        align-items: center; /* Center stacked links */
-        justify-content: center;
-        text-align: center;
-         font-family: Arial, Helvetica, sans-serif;
-         font-size: 1.33rem;
-        font-weight: 500;     
-         padding: 0.5rem;
-         margin: 0.5rem;
-    }
-    
-.nav-link:hover {
-   color: #eee; /* Light text color for navbar links */
-   background-color: rgba(12, 16, 32, 0.5);   
-   transform: scale(1.05); /* Slightly enlarge link on hover */
-   text-decoration: none; /* Ensure no underline on hover */
-   box-shadow: 0 3px 5px rgba(180,180,240, 0.75); 
-   border-radius: 20px;
-}
-        
-  
-        }
 
          /* Large Devices / Large Desktops (lg: >= 1024px) */
         @media (min-width: 1024px) {
@@ -711,14 +682,21 @@ body.dark {background-color: #1e1e1e;
          padding: 0.5rem;
          margin: 0.5rem;
 }
+.wrapper {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+
 footer {
-    width: 100%; /* Spans the full width of the viewport */
-    color: #eed; /* Light text color for navbar links */
-    background-color: rgba(12, 18, 32, 0.60);   /* Darker navy background for the navbar */
-    z-index: 3; /* Ensures the navbar stays above other content */
-    border-top: 1px solid rgba(247, 244, 244, 0.1); /* Light border at the bottom */
-    margin-top: auto;   
-   text-align: center;
+  background-color: rgba(75, 72, 76, 0.75);
+  color: white;
+  padding: 20px;
+  margin-top: auto;
+  text-align: center;
+  justify-content: center;
+  
 }
         }
 
