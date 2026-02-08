@@ -288,11 +288,6 @@ body.dark {
 <<<<<<< HEAD
    background-color: rgba(12, 16, 21, 0.33);   
    transform: scale(1.05); /* Slightly enlarge link on hover */
-=======
-   background-color: #1a202c;/* Slightly lighter background on hover */
-   color: azure;/* Different text color on hover */
-   transform: scale(1.02); /* Slightly enlarge link on hover */
->>>>>>> b76cc70d3b49904fff61c449efb69d2d45239fef
    text-decoration: none; /* Ensure no underline on hover */
    box-shadow: 0 3px 5px rgba(180,180,240, 0.75); 
    border-radius: 20px;
