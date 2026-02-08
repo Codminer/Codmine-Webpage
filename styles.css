@@ -426,20 +426,15 @@ body.dark {background-color: #1e1e1e;
 #Contact {
   color: #a9a9a9 !important;
   }
-   
-<!--
-Source - https://stackoverflow.com/a/36896884
-Posted by user3765658, modified by community. See post 'Timeline' for change history
-Retrieved 2026-02-08, License - CC BY-SA 3.0
--->
 
 footer {
     position: fixed;
     left: 0px;
     bottom: 0px;
-    height: 54px;
+    height: 76px;
     width: 100%;
-    background: #1abc9c;
+    padding: 10px;
+    background-color: rgba(12, 24, 36, 0.75);  
 }
 
    }
@@ -639,9 +634,10 @@ footer {
     position: fixed;
     left: 0px;
     bottom: 0px;
-    height: 54px;
+    height: 76px;
     width: 100%;
-    background: #1abc9c;
+    padding: 10px;
+    background-color: rgba(12, 24, 36, 0.75);  
 }
   }
 @media (max-width: 480px) {
@@ -707,9 +703,10 @@ footer {
     position: fixed;
     left: 0px;
     bottom: 0px;
-    height: 54px;
+    height: 76px;
     width: 100%;
-    background: #1abc9c;
+    padding: 10px;
+    background-color: rgba(12, 24, 36, 0.75);  
 }
 }
          /* Large Devices / Large Desktops (lg: >= 1024px) */
@@ -743,9 +740,10 @@ footer {
     position: fixed;
     left: 0px;
     bottom: 0px;
-    height: 54px;
+    height: 76px;
     width: 100%;
-    background: #1abc9c;
+    padding: 10px;
+    background-color: rgba(12, 24, 36, 0.75);  
 }
         }
 
