@@ -4,8 +4,6 @@ body {
     height: 100%;
     min-width: 100vw;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
     background-color: #fffff3;
     color: #888;
     font-family: Arial, Helvetica, sans-serif;
@@ -429,16 +427,21 @@ body.dark {background-color: #1e1e1e;
   color: #a9a9a9 !important;
   }
    
+<!--
+Source - https://stackoverflow.com/a/36896884
+Posted by user3765658, modified by community. See post 'Timeline' for change history
+Retrieved 2026-02-08, License - CC BY-SA 3.0
+-->
+
 footer {
-  position: sticky;
-  background-color: rgba(75, 72, 76, 0.75);
-  color: white;
-  bottom: 0;
-  left: 0;  
-  text-align: center;
-  justify-content: center;
-  
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    height: 54px;
+    width: 100%;
+    background: #1abc9c;
 }
+
    }
   
     .certificate {
@@ -603,8 +606,7 @@ footer {
   }
    .container {
             padding: 2rem;
-            min-width: 768px;
-            margin: 1.2rem;
+            margin: 2rem;
             align-items: center;
             justify-content: center;
              /* Auto-fit: as many 300px columns as possible */
@@ -634,19 +636,84 @@ footer {
     }
     
 footer {
-  position: sticky;
-  background-color: rgba(75, 72, 76, 0.75);
-  color: white;
-  bottom: 0;
-  left: 0;  
-  text-align: center;
-  justify-content: center;
-  
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    height: 54px;
+    width: 100%;
+    background: #1abc9c;
 }
   }
+@media (max-width: 480px) {
+    body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        object-fit: cover;
+        line-height: 1.5;
+    }
+        
+    #navbar {
+        position: fixed;
+        width: 100%; /* Full width within its container */
+        left: 50%;
+        top: 0;
+        padding: 0;
+        overflow-x: hidden; /* Prevent horizontal scroll on small devices */
+       
+    }
+    .nav-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    
+ 
 
+  }
+   .container {
+            padding: 2rem;
+            margin: 2rem;
+            align-items: center;
+            justify-content: center;
+             /* Auto-fit: as many 300px columns as possible */
+            grid-template-columns: repeat(2, 300px);
+        }
+
+  
+           .nav-link {
+        display: inline-block;
+        flex-direction: row; /* Stack navbar links vertically */
+        align-items: center; /* Center stacked links */
+        justify-content: center;
+        text-align: center;
+         font-family: Arial, Helvetica, sans-serif;
+         font-size: 1.33rem;
+        font-weight: 500;     
+         padding: 0.5rem;
+         margin: 0.5rem;
+    }
+    .nav-link:hover {
+   color: #eee; /* Light text color for navbar links */
+   background-color: rgba(12, 16, 32, 0.4);   
+   transform: scale(1.05); /* Slightly enlarge link on hover */
+   text-decoration: none; /* Ensure no underline on hover */
+   box-shadow: 0 3px 5px rgba(180,180,240, 0.75); 
+   border-radius: 20px;
+    }
+    
+footer {
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    height: 54px;
+    width: 100%;
+    background: #1abc9c;
+}
+}
          /* Large Devices / Large Desktops (lg: >= 1024px) */
-        @media (min-width: 1024px) {
+        @media (max-width: 1024px) {
             .container {
                  /* Fixed 3-column layout on large screens */
                 grid-template-columns: repeat(2, 300px);
@@ -673,14 +740,12 @@ footer {
 }
 
 footer {
-  position: sticky;
-  background-color: rgba(75, 72, 76, 0.75);
-  color: white;
-  bottom: 0;
-  left: 0;  
-  text-align: center;
-  justify-content: center;
-  
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    height: 54px;
+    width: 100%;
+    background: #1abc9c;
 }
         }
 
