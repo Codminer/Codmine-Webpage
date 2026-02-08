@@ -279,11 +279,9 @@ body.dark {background-color: #1e1e1e;
     flex-direction: row;
     justify-content: center;
     align-content: space-around;
-    padding: 0.1rem; /* Increased padding for better click */
-    margin: 0 auto; /* Space between links */
     border-radius: 20px; /* Rounded corners for a softer look */
     box-sizing: border-box; /* Ensures padding and border are included in the total width */
-    gap: 0.12rem;
+    gap: 0.1rem;
   }
 
 /* Styles for navigation links */
@@ -437,8 +435,8 @@ body.dark {background-color: #1e1e1e;
     z-index: 3; /* Ensures the navbar stays above other content */
     border-top: 1px solid rgba(247, 244, 244, 0.1); /* Light border at the bottom */
     height: auto;
-    margin: 0 auto;
-    padding: 0 auto;
+    margin: 0;
+    padding: 0;
     overflow-x: hidden; /* Prevent horizontal scroll on small devices */
    }
   
@@ -575,17 +573,8 @@ body.dark {background-color: #1e1e1e;
 
 /* Styles for screens smaller than 768px (e.g., tablets in portrait, large phones) */
 @media (max-width: 768px) {
-  body {
-     width: 100%;
-     min-width: 100vw;
-     height: 100%;
-     min-height: 100vh;
-     margin: 0;
-     padding: 0;
-    
-  }
     #navbar {
-        width: 100%; /* Full width within its container */
+        width: 100vw; /* Full width within its container */
         left: 50%;
         margin: 0 auto;
         overflow: hidden; /* Prevent horizontal scroll on small devices */
@@ -639,14 +628,14 @@ body.dark {background-color: #1e1e1e;
     
      }
      footer{
-    width: 100%; /* Spans the full width of the viewport */
+    width: 100vw; /* Spans the full width of the viewport */
     color: #eed; /* Light text color for navbar links */
     background-color: rgba(12, 24, 32, 0.55);   /* Darker navy background for the navbar */
     z-index: 3; /* Ensures the navbar stays above other content */
     border-top: 1px solid rgba(247, 244, 244, 0.1); /* Light border at the bottom */
     height: fit-content;
-    margin: 0 auto;
-    padding: 0 auto;
+    margin: 0;
+    padding: 0;
     overflow-x: hidden; /* Prevent horizontal scroll on small devices */
    }
   
@@ -662,8 +651,8 @@ body.dark {background-color: #1e1e1e;
              #navbar {
         width: 100%; /* Full width within its container */
         left: 50%;
-        margin: 0 auto;
-        overflow: hidden; /* Prevent horizontal scroll on small devices */
+        margin: 0;
+        overflow-x: hidden; /* Prevent horizontal scroll on small devices */
        
     }
            .nav-link {
@@ -679,14 +668,14 @@ body.dark {background-color: #1e1e1e;
        
     }
     footer{
-    width: 100%; /* Spans the full width of the viewport */
+    width: 100vw; /* Spans the full width of the viewport */
     color: #eed; /* Light text color for navbar links */
     background-color: rgba(12, 24, 32, 0.55);   /* Darker navy background for the navbar */
     z-index: 3; /* Ensures the navbar stays above other content */
     border-top: 1px solid rgba(247, 244, 244, 0.1); /* Light border at the bottom */
     height: auto;
-    margin: 0 auto;
-    padding: 0 auto;
+    margin: 0;
+    padding: 0;
     overflow-x: hidden; /* Prevent horizontal scroll on small devices */
    }
   
@@ -701,7 +690,8 @@ body.dark {background-color: #1e1e1e;
              #navbar {
         width: 100%; /* Full width within its container */
         left: 50%;
-        margin: 0 auto;
+        margin: 0;
+        padding: 0;        
         overflow-x: hidden; /* Prevent horizontal scroll on large devices */
        
     }
@@ -718,13 +708,14 @@ body.dark {background-color: #1e1e1e;
        
     }
     footer {
-    width: 100%; /* Spans the full width of the viewport */
+    width: 100vw; /* Spans the full width of the viewport */
     color: #eed; /* Light text color for navbar links */
     background-color: rgba(12, 24, 32, 0.55);   /* Darker navy background for the navbar */
     z-index: 3; /* Ensures the navbar stays above other content */
     border-top: 1px solid rgba(247, 244, 244, 0.1); /* Light border at the bottom */
     height: fit-content;
-    margin: 0 auto;
+    margin: 0;
+    padding: 0;
     overflow-x: hidden; /* Prevent horizontal scroll on large devices */
    }
   
