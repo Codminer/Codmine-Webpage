@@ -280,12 +280,15 @@ body.dark {background-color: #1e1e1e;
 }
 /* Styles for the unordered list within the navbar */
 
-  .nav-list {
+    .nav-list {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-content: space-evenly;
-
+    align-content: space-around;
+    padding: 0.1rem; /* Increased padding for better click */
+    margin: 0 auto; /* Space between links */
+    border-radius: 20px; /* Rounded corners for a softer look */
+    box-sizing: border-box; /* Ensures padding and border are included in the total width */
 
   }
 
@@ -300,7 +303,7 @@ body.dark {background-color: #1e1e1e;
     color: #fffff7; 
     text-decoration: none; /* Removes underline from links */
     transition: all 0.3s ease; /* Smooth transition on hover */
-    font-size: 1.25rem; /* Slightly larger font size for better readability */
+    font-size: 1rem; /* Slightly larger font size for better readability */
     font-weight: 500; /* Semi-bold font weight for emphasis */
     padding: 0.5rem; /* Increased padding for better click */
     margin: 0.5rem; /* Space between links */
