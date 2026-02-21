@@ -1,5 +1,7 @@
 /* Base body styles */
 body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
     width: 100%;
     height: 100%;
     min-width: 100vw;
@@ -9,7 +11,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     transition: background 0.3s, color 0.3s;
     line-height: 1.5; /* Improved readability for body text */
-    margin-bottom: 50px;
+    margin: 0;
     padding: 0;
     overflow-x: hidden; /* Prevent horizontal scroll */
     scroll-behavior: smooth; /* Smooth scrolling for anchor links */
@@ -84,6 +86,7 @@ body.dark {background-color: #1e1e1e;
 
   }
   .main-container {
+    flex: 1;
     top: 0;
     margin: 0 auto;
     padding: 0;
@@ -292,10 +295,10 @@ body.dark {background-color: #1e1e1e;
          justify-content: space-evenly;
          align-items: center;
          font-family: Arial, Helvetica, sans-serif;
-         font-size: 1.25rem;
+         font-size: 1rem;
          font-weight: 450;     
          padding: 0.32rem;
-         margin: 0 0.32rem;
+         margin: 0.12rem 0.32rem;
        
     }
 /* Hover effect for navigation links */
@@ -580,15 +583,16 @@ footer {
         
     #navbar {
         position: fixed;
-        width: 100%; /* Full width within its container */
-        left: 50%;
+        width: 20%; 
+        left: 20%;
         top: 0;
-        padding: 0;
+        padding: 5px;
         overflow-x: hidden; /* Prevent horizontal scroll on small devices */
        
     }
     .nav-list {
     display: flex;
+    justify-content: flex-start;
     flex-direction: row;
     justify-content: center;
     align-content: center;
@@ -598,7 +602,7 @@ footer {
   }
    .container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 10px;
   grid-auto-rows: minmax(180px, auto);
         }
@@ -607,13 +611,13 @@ footer {
            .nav-link {
          display: inline-block;
          flex-direction: row;
-         justify-content: space-around;
+         justify-content: space-evenly;
          align-items: center;
          font-family: Arial, Helvetica, sans-serif;
-         font-size: 1.2rem;
+         font-size: 1rem;
          font-weight: 450;     
-         padding: 0.3rem;
-         margin: 0 0.3rem;
+         padding: 0.32rem;
+         margin: 0.12rem 0.32rem;
        
     }
     .nav-link:hover {
@@ -677,10 +681,10 @@ footer {
          justify-content: space-evenly;
          align-items: center;
          font-family: Arial, Helvetica, sans-serif;
-         font-size: 1.25rem;
+         font-size: 1rem;
          font-weight: 450;     
          padding: 0.32rem;
-         margin: 0 0.32rem;
+         margin: 0.12rem 0.32rem;
        
     }
     .nav-link:hover {
@@ -734,10 +738,10 @@ footer {
          justify-content: space-evenly;
          align-items: center;
          font-family: Arial, Helvetica, sans-serif;
-         font-size: 1.25rem;
+         font-size: 1rem;
          font-weight: 450;     
          padding: 0.32rem;
-         margin: 0 0.32rem;
+         margin: 0.12rem 0.32rem;
        
     }
 
