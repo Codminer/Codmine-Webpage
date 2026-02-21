@@ -329,10 +329,10 @@ body.dark {background-color: #1e1e1e;
  }
 
   .container {
-     display: grid;
+  display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
-  grid-auto-rows: minmax(280px, auto);
+  grid-auto-rows: minmax(180px, auto);
   } 
 
 /* Project-box styles */
@@ -600,10 +600,10 @@ footer {
 
   }
    .container {
-            display: grid;
+  display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
-  grid-auto-rows: minmax(280px, auto);
+  grid-auto-rows: minmax(180px, auto);
         }
 
   
@@ -669,10 +669,10 @@ footer {
 
   }
    .container {
-            display: grid;
+  display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
-  grid-auto-rows: minmax(280px, auto);
+  grid-auto-rows: minmax(180px, auto);
         }
 
   
@@ -720,8 +720,10 @@ footer {
         margin-bottom: 50px;
     }
             .container {
-                 /* Fixed 2-column layout on large screens */
-                grid-template-columns: repeat(2, 280px);
+                 display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(180px, auto);
             }
              #navbar {
         position: fixed;        
@@ -757,9 +759,9 @@ footer {
 }
         }
  .container {
-            display: grid;
+  display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
-  grid-auto-rows: minmax(280px, auto);
+  grid-auto-rows: minmax(180px, auto);
         }
 
