@@ -41,7 +41,6 @@ body.dark {background-color: #1e1e1e;
   height: 26px;
   border-radius: 50px;
   position: relative;
-  padding: 5px;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -276,10 +275,10 @@ body.dark {background-color: #1e1e1e;
 /* Styles for the unordered list within the navbar */
 
   .nav-list {
-    display: flex;
+    display: inline-block;
     flex-direction: row;
-    justify-content: center;
-    align-content: space-around;
+    justify-content: space-evenly;
+    align-items: center;
     
     
   }
@@ -290,13 +289,13 @@ body.dark {background-color: #1e1e1e;
            .nav-link {
          display: inline-block;
          flex-direction: row;
-         justify-content: space-around;
+         justify-content: space-evenly;
          align-items: center;
          font-family: Arial, Helvetica, sans-serif;
          font-size: 1.25rem;
          font-weight: 450;     
-         padding: 0.33rem;
-         margin: 0 0.33rem;
+         padding: 0.32rem;
+         margin: 0 0.32rem;
        
     }
 /* Hover effect for navigation links */
@@ -668,22 +667,20 @@ footer {
   }
    .container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 10px;
   grid-auto-rows: minmax(180px, auto);
         }
-
-  
-          .nav-link {
+           .nav-link {
          display: inline-block;
          flex-direction: row;
-         justify-content: space-around;
+         justify-content: space-evenly;
          align-items: center;
          font-family: Arial, Helvetica, sans-serif;
          font-size: 1.25rem;
          font-weight: 450;     
-         padding: 0.33rem;
-         margin: 0 0.33rem;
+         padding: 0.32rem;
+         margin: 0 0.32rem;
        
     }
     .nav-link:hover {
@@ -732,16 +729,15 @@ footer {
        
     }
   .nav-link {
-        display: inline-block;
-        flex-direction: row; /* Stack navbar links vertically */
-        align-items: center; /* Center stacked links */
-        justify-content: center;
-        text-align: center;
+         display: inline-block;
+         flex-direction: row;
+         justify-content: space-evenly;
+         align-items: center;
          font-family: Arial, Helvetica, sans-serif;
          font-size: 1.25rem;
-        font-weight: 450;     
-         padding: 0.33rem;
-         margin: 0.33rem;
+         font-weight: 450;     
+         padding: 0.32rem;
+         margin: 0 0.32rem;
        
     }
 
