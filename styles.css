@@ -1,3 +1,4 @@
+
 :root {
  --primary-color: #3a732d;
   --text-primary: #333;
@@ -10,7 +11,7 @@
   --bg-sidebar: rgba(1, 2, 3, 0.95);
    --text-main: #999;
   --text-light: #61b0be;
-  --text-gray: #888;
+  --text-gray: #999;
     --highlight-azure: #61b0be;
    --accent: #0b57d0;
    --hover-bg: rgba(0, 0, 0, 0.75);
@@ -356,9 +357,9 @@ p, h3 {
   width: 120px;
   }
 .mt-3 {
-  color: #4fa28f;
+  color: #888;
   }
-p.text-m, .text-xl {
+text-m, .text-xl {
   color: #999 !important;
   font-weight: 400  !important;
   top: 0 !important 
