@@ -10,7 +10,6 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
        <!-- Load Font Awesome for Social Icons (v6) -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJ/cn/7oWqVmhvLgSSf3mQyK4x+jH6SITpYl8x+d9k1q5wVwK+y5F2Q+D4k5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJ/cnVf/z5h6sPFv0RkL0Q4pS3rD5K9gP6aGq3b0hT4F2Bv4Wl/XwX6w/Yn5Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
      
       <link rel="stylesheet" href="styles.css">
     
@@ -27,11 +26,11 @@
         /* Glassmorphism Card Style */
         .glass-card {
             border: 1px solid rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(12px);
-           -webkit-backdrop-filter: blur(12px);
-            box-shadow: 0 9px 18px rgba(0, 0, 24, 0.3);
+            backdrop-filter: blur(3px);
+           -webkit-backdrop-filter: blur(3px);
+            box-shadow: 0 7px 15px rgba(6, 18, 24, 0.03);
 
-            transition: background-color 0.8s, border 0.8s, box-shadow 0.8s;
+            transition: background-color 0.3s, border 0.3s, box-shadow 0.3s;
         }
         
         /* Social Icon Hover Effect */
@@ -53,10 +52,10 @@
             flex-direction: column;
             postion: relative;
             justify-content: center;
-            gap: 16px;
-            width: 420px;
-            margin: 20px auto;
-            background-color: rgba(255, 255, 255, 0.05); /* Light transparent background */
+            gap: 10px;
+            width: 400px;
+            margin: 10px auto;
+            background-color: rgba(255, 255, 255, 0.02); /* Light transparent background */
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(0, 1, 1, 0.1); /* Subtle border */
@@ -65,45 +64,54 @@
 
         .cert-card:hover {
             transform: translateY(-5px); /* Pronounced lift effect */
-            box-shadow: 0 9px 18px rgba(115, 240, 245, 0.3); /* Lime Green glow shadow */         
-            background-color: #3a3a3a;
+            box-shadow: 0 7px 15px rgba(10, 70, 90, 0.3); /* Lime Green glow shadow */         
+            background-color: #aeaea;
             border-color: rgba(162, 200,210, 0.3);
        
         }
      
         /* Custom badge styling - Lime Green/Yellow */
         .badge-icon {
-            color: #09cde3; /* Lime green */
-            text-shadow: 0 0px 5px rgba(136, 161, 185, 0.7);
+            color: #61b0be; /* Lime green */
+            text-shadow: 0 0px 7px rgba(132, 150, 180, 0.05);
         }
     </style>
     </head>
 
     <body>
         <!-- This navigation bar will stay fixed at the top of the viewport -->
-       <header><nav id="navbar" class="menu">
-          <ul class="nav-list">
-            <!-- Navigation links to different sections of the page -->
-            <li><a href="#Home" class="nav-link">Home</a></li>
-            <li><a href="#About" class="nav-link">About</a></li>
-            <li><a href="#Skills" class="nav-link">Skills</a></li>
-            <li><a href="#Certs" class="nav-link">Certs</a></li>
-            <li><a href="#Project" class="nav-link">Project</a></li>
-            <li><a href="#Contact" class="nav-link">Contact</a></li>
-           <div class="toggle-container">
-  <input type="checkbox" class="checkbox" id="checkbox">
-  <label for="checkbox" class="checkbox-label">
-    <i class="fas fa-moon"></i>
-    <i class="fas fa-sun"></i>
-    <span class="ball"></span>
-  </label>
-</div>
-            </ul>
-         </nav>
-    </header>
+         
+      <header class=navbar>
+        <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <button class="menu-btn" id="menuBtn">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <span class="brand-name">Portfolio</span>
+        </div>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="#home" class="nav-item"><span class="nav-icon"></span><span class="nav-text">Home</span></a>
+            <a href="#about" class="nav-item"><span class="nav-icon"></span><span class="nav-text">About</span></a>
+            <a href="#skills" class="nav-item"><span class="nav-icon"></span><span class="nav-text">Skills</span></a>
+            <a href="#certs" class="nav-item"><span class="nav-icon"></span><span class="nav-text">Certs</span></a>
+            <a href="#projects" class="nav-item"><span class="nav-icon"></span><span class="nav-text">Projects</span></a>
+            <a href="#contact" class="nav-item"><span class="nav-icon"></span><span class="nav-text">Contact</span></a>
+            
+               
+            <button class="theme-btn" id="themeToggle">
+                <span class="nav-icon" id="themeIcon">☀️</span>
+                <span class="nav-text"></span>
+            </button>
+        </nav>
+    </aside>
+</header>
+
         <!-- This section will take up the full height of the viewport -->
     <main class="main-container">
-       <section id="Home" class="welcome-section">
+       <section id="home" class="welcome-section">
        <div id="Portfolio">
                   <div class="hero-section">
                   </div>
@@ -122,7 +130,7 @@
             </div>  
        </section>
     
-        <section id="About" 
+        <section id="about" 
         class="w-full max-w-4xl bg-gray-750/80 p-6 sm:p-10 lg:p-16 rounded-xl transition-all duration-300 light-gray-glow">
         
         <!-- Header Block -->
@@ -153,7 +161,7 @@
 
         <!-- Core Competencies (h and p elements) -->
         <div class="mt-12 pt-8 border-t border-gray-400">
-            <h3 class="text-xl font-bold text-gray-400 mb-4 text-center uppercase tracking-wider">
+            <h3 class="text-2xl font-bold text-gray-400 mb-4 text-center uppercase tracking-wider">
                 Key Deliverables
             </h3>
             
@@ -186,7 +194,7 @@
         </div>
        </section>
        
-      <section id="Skills" class="skills-section">
+      <section id="skills" class="skills-section">
       <h2>My Core Frontend Skills</h2>
     
       <div class="skills-grid-container">
@@ -266,7 +274,7 @@
        </div>
        </section>
 
-        <section id="Certs" 
+        <section id="certs" 
         class="w-full max-w-4xl">
           <!-- H1: Main Section Title -->
          <h2 class="certificate">My Achievements</h2>
@@ -374,7 +382,7 @@
 
      <!-- Projects Section -->
      <!-- This section will showcase your various projects -->
-     <section id="Project">
+     <section id="projects">
         <h2 class="work">There are My projects</h2>
         <!-- Grid layout for project tiles, responsive across different screen sizes -->
         <div class="container">
@@ -443,43 +451,43 @@
      </section>
 
      <!-- This section provides ways for visitors to contact you -->
-     <section id="Contact" class="reach">
+     <section id="contact" class="reach">
      <!-- Main Contact Us Section -->
       <div class="form-container">
         <h3 class="touch">Get in Touch</h3>
-        <p class="para">Fill out the form below to contact us</p>
+        <p class="para">Fill out the form to contact us</p>
 
         <form>
           <div class="input-group">
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Name" required />
+              <input id="name" type="text" placeholder="Name..." required />
             </div>
 
             <div class="input-field">
               <i class="fas fa-envelope"></i>
-              <input type="email" placeholder="Email" required />
+              <input id="email" type="email" placeholder="Email..." required />
             </div>
 
             <div class="input-field">
               <i class="fas fa-phone"></i>
-              <input type="tel" placeholder="Phone (optional)" />
+              <input id="tel" type="tel" placeholder="Phone (optional)" />
             </div>
 
             <div class="input-field">
               <i class="fas fa-tag"></i>
-              <input type="text" placeholder="Subject" required />
+              <input id="sub" type="text" placeholder="Subject..." required />
             </div>
           </div>
 
           <div class="message-field">
             <i class="fas fa-message"></i>
-            <textarea placeholder="Your Message" required></textarea>
+            <textarea placeholder="Your Message..."></textarea>
           </div>
 
-          <button type="submit">
+          <button type="submit" class="subtn">
             <div class="btn-content">
-              <span>Send Message</span>
+              <span>Submit</span>
               <i class="fas fa-paper-plane"></i>
             </div>
           </button>
