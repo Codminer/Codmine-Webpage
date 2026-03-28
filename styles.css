@@ -357,10 +357,10 @@ p, h3 {
   width: 120px;
   }
 .mt-3 {
-  color: #888;
+  color: #999 !important;
   }
 text-m, .text-xl {
-  color: #999 !important;
+  color: #888 !important;
   font-weight: 400  !important;
   top: 0 !important 
 }
