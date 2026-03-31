@@ -1,31 +1,36 @@
-const menuBtn = document.getElementById('menuBtn');
-        const sidebar = document.getElementById('sidebar');
+ const menuBtn = document.getElementById('menuBtn');
         const navLinks = document.getElementById('navLinks');
         const themeToggle = document.getElementById('themeToggle');
         const themeIcon = document.getElementById('themeIcon');
-        const html = document.documentElement;
+        const htmlElement = document.documentElement;
 
-        // Toggle Logic
+        // 1. Mobile Menu Toggle
         menuBtn.addEventListener('click', () => {
-            if (window.innerWidth > 768) {
-                // Desktop: Toggle Sidebar Collapse
-                sidebar.classList.toggle('collapsed');
-            } else {
-                // Mobile: Toggle Link Overlay
-                navLinks.classList.toggle('active');
-            }
+            navLinks.classList.toggle('active');
         });
 
-        // Theme Toggle Logic
+        // Close menu when clicking a link (Mobile optimization)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // 2. Theme Toggle Logic
         themeToggle.addEventListener('click', () => {
-            const currentTheme = html.getAttribute('data-theme');
-            const targetTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            html.setAttribute('data-theme', targetTheme);
-            themeIcon.textContent = targetTheme === 'light' ? '☀️' : '🌙';
-            localStorage.setItem('theme', targetTheme);
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            htmlElement.setAttribute('data-theme', newTheme);
+            themeIcon.textContent = newTheme === 'light' ? '☀️' : '🌙';
+            
+            // Optional: Save preference to localStorage
+            localStorage.setItem('theme', newTheme);
         });
 
-        // Initialize theme
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        html.setAttribute('data-theme', savedTheme);
-        themeIcon.textContent = savedTheme === 'light' ? '☀️' : '🌙';
+        // Load saved theme on startup
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            htmlElement.setAttribute('data-theme', savedTheme);
+            themeIcon.textContent = savedTheme === 'light' ? '☀️' : '🌙';
+        }
