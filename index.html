@@ -1,4 +1,5 @@
-  <!DOCTYPE html>
+
+<!DOCTYPE html>
 <html lang="en">
     <head>
        <meta charset="UTF-8">
@@ -55,9 +56,9 @@
             justify-content: center;
             align-items: center;
             gap: 10px;
-            width: 340px;
+            width: 350px;
             margin: 10px auto;
-            background-color: rgba(255, 255, 255, 0.02); /* Light transparent background */
+            background-color: rgba(255, 255, 255, 0.03); /* Light transparent background */
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(0, 1, 1, 0.1); /* Subtle border */
@@ -69,8 +70,7 @@
 
         .cert-card:hover {
             transform: translateY(-5px); /* Pronounced lift effect */
-            box-shadow: 0 7px 15px rgba(10, 70, 90, 0.3); /* Lime Green glow shadow */         
-            background-color: #aeaea;
+            box-shadow: 0 4px 9px azure;       
             border-color: rgba(162, 200,210, 0.3);
        
         }
@@ -86,32 +86,30 @@
     <body>
         <!-- This navigation bar will stay fixed at the top of the viewport -->
          
-      <header class=navbar>
-        <aside class="sidebar" id="sidebar">
-        <div class="sidebar-header">
-            <button class="menu-btn" id="menuBtn">
+      <header>
+        <nav class="navbar">
+        <div class="nav-left">
+            <button class="menu-btn" id="menuBtn" aria-label="Toggle Menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </button>
-            <span class="brand-name">Portfolio</span>
+          <span style="font-weight: bold; font-size: 1.2rem;"><a href="https://codminer.github.io/Codmine-Webpage/">Portfolio</a></span>
         </div>
 
-        <nav class="nav-links" id="navLinks">
-            <a href="#home" class="nav-item"><span class="nav-icon"></span><span class="nav-text">Home</span></a>
-            <a href="#about" class="nav-item"><span class="nav-icon"></span><span class="nav-text">About</span></a>
-            <a href="#skills" class="nav-item"><span class="nav-icon"></span><span class="nav-text">Skills</span></a>
-            <a href="#certs" class="nav-item"><span class="nav-icon"></span><span class="nav-text">Certs</span></a>
-            <a href="#projects" class="nav-item"><span class="nav-icon"></span><span class="nav-text">Projects</span></a>
-            <a href="#contact" class="nav-item"><span class="nav-icon"></span><span class="nav-text">Contact</span></a>
-            
-               
-            <button class="theme-btn" id="themeToggle">
-                <span class="nav-icon" id="themeIcon">☀️</span>
-                <span class="nav-text"></span>
-            </button>
-        </nav>
-    </aside>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#certs">Certs</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <button class="theme-toggle" id="themeToggle" title="Toggle Dark/Light Mode">
+            <span id="themeIcon">☀️</span>
+        </button>
+    </nav>
 </header>
 
         <!-- This section will take up the full height of the viewport -->
@@ -135,70 +133,69 @@
             </div>  
        </section>
     
-        <section id="about" class="w-full max-w-4xl bg-gray-750/80 p-6 sm:p-10 lg:p-16 rounded-xl transition-all duration-300 light-gray-glow">
-        
-        
-        <!-- Header Block -->
-        <div class="text-center mb-10 sm:mb-14">
-            <!-- H2: Sub-role and focus -->
-            <h2 class="mt">
-                Digital Craftsperson & UX Advocate.
-            </h2>
-        </div>
+ <section id="about" class="w-full max-w-3xl mx-auto p-6 sm:p-10 lg:p-16 rounded-xl transition-all duration-300">
+    
+    <div class="text-center mb-10 sm:mb-14">
+        <h2 class="text-2xl sm:text-3xl font-400 text-light tracking-tight">
+            Digital Craftsperson & <span class="text-blue-400">UX Advocate.</span>
+        </h2>
+    </div>
 
-        <!-- Unique Quotation/Philosophy Block (p elements) -->
-        <div class="space-y-8">
-            
-            <!-- Unique block quote style P element -->
-            <blockquote class="relative border-l-8 border-lighgray-500 pl-6 sm:pl-8 py-2">
-               <p class="text-1xl sm:text-2xl font-extralight italic text-gray-500">
-                    "I build what users touch. That requires more than just code; it demands deep proficiency in **HTML, CSS, and JavaScript** to guarantee performance, accessibility, and pixel precision."
-                </p>
-            </blockquote>
-
-            <!-- Supporting P element -->
-
-            <p class="text-lg text-light-400 leading-relaxed max-w-2xl mx-auto">
-                My commitment is to efficient, reusable code. I translate complex user stories into fluid, responsive experiences, relying on modern tooling like **React, Tailwind, and Vite** to maximize development velocity without sacrificing stability.
-
+    <div class="space-y-8">
+        <blockquote class="relative border-l-4 border-blue-500 pl-6 sm:pl-8 py-2">
+            <p class="text-xl sm:text-2xl font-light italic text-gray-400">
+                "I build what users touch. That requires more than just code; it demands deep proficiency in <span class="text-light font-medium">HTML, CSS, and JavaScript</span> to guarantee performance and pixel precision."
             </p>
-        </div>
+        </blockquote>
 
-        <!-- Core Competencies (h and p elements) -->
-        <div class="mt-12 pt-8 border-t border-gray-500">
-            <h3 class="text-2xl font-semibold text-gray-500 mb-4 text-center uppercase tracking-wider">
-                Key Deliverables
-            </h3>
+        <p class="text-lg text-gray-400 leading-relaxed max-w-2xl mx-auto text-center">
+            My commitment is to efficient, reusable code. I translate complex user stories into fluid, responsive experiences, relying on modern tooling like <strong>React, Tailwind CSS, and Vue.js</strong>.
+        </p>
+    </div>
+
+    <div class="mt-12 pt-8 border-t border-gray-500">
+        <h3 class="text-lg font-bold text-gray-400 mb-8 text-center uppercase tracking-[0.3em]">
+            Key Deliverables
+        </h3>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
             
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+            <div class="group relative p-6 rounded-lg bg-gray-700 border border-gray-700 hover:border-blue-500 transition-all duration-300 cursor-help">
+                <h4 class="text-lg font-semibold text-white group-hover:text-blue-400 transition-colors">Fluid Layouts</h4>
                 
-                <!-- Deliverable 1 -->
-                <div class="p-4 rounded-lg bg-gray-700/70 hover:bg-gray-700/80 transition duration-300 border border-gray-400">
-                    <h4 class="text-lg font-semibold text-gray-400">Fluid Layouts</h4>
-                    <p class="text-sm text-gray-400 mt-1">
-                        Adaptive design for every viewport.
-                    </p>
-                </div>
-                
-                <!-- Deliverable 2 -->
-                <div class="p-4 rounded-lg bg-gray-700/70 hover:bg-gray-700/80 transition duration-300 border border-gray-400">
-                    <h4 class="text-lg font-semibold text-gray-400">Optimized Performance</h4>
-                    <p class="text-sm text-gray-400 mt-1">
-                        Sub-second load times and smooth transitions.
-                    </p>
-                </div>
-
-                <!-- Deliverable 3 -->
-                <div class="p-4 rounded-lg bg-gray-700/70 hover:bg-gray-700/80 transition duration-300 border border-gray-400">
-                    <h4 class="text-lg font-semibold text-gray-400">Accessibility (A11y)</h4>
-                    <p class="text-sm text-gray-400 mt-1">
-                        Inclusive design for all users.
+                <div class="absolute inset-0 z-10 flex items-center justify-center p-4 bg-gray-700 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none shadow-xl border border-blue-500">
+                    <p class="text-sm text-gray-200 text-center">
+                        <span class="block font-bold text-blue-400 mb-1">Adaptive Viewports</span>
+                        I ensure your site works perfectly across all devices.
                     </p>
                 </div>
             </div>
+
+            <div class="group relative p-6 rounded-lg bg-gray-700 border border-gray-700 hover:border-green-500 transition-all duration-300 cursor-help">
+                <h4 class="text-lg font-semibold text-white group-hover:text-green-400 transition-colors">Optimized Performance</h4>
+                
+                <div class="absolute inset-0 z-10 flex items-center justify-center p-4 bg-gray-700 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none shadow-xl border border-green-500">
+                    <p class="text-sm text-gray-200 text-center">
+                        <span class="block font-bold text-green-400 mb-1">Speed & Efficiency</span>
+                        Delivering smooth transitions by writing clean & minified code.
+                    </p>
+                </div>
+            </div>
+
+            <div class="group relative p-6 rounded-lg bg-gray-700 border border-gray-700 hover:border-purple-500 transition-all duration-300 cursor-help">
+                <h4 class="text-lg font-semibold text-white group-hover:text-purple-400 transition-colors">Accessibility (A11y)</h4>
+                
+                <div class="absolute inset-0 z-10 flex items-center justify-center p-4 bg-gray-700 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none shadow-xl border border-purple-500">
+                    <p class="text-sm text-gray-200 text-center">
+                        <span class="block font-bold text-purple-400 mb-1">Inclusive Design</span>
+                         Ensuring semantic HTML so that screen readers have a first-class experience.
+                    </p>
+                </div>
+            </div>
+
         </div>
-       </section>
-       
+    </div>
+</section>
       <section id="skills" class="skills-section">
       <h2>My Core Frontend Skills</h2>
     
@@ -280,7 +277,7 @@
        </section>
 
         <section id="certs" 
-        class="w-full max-w-4xl">
+        class="cert-card-contaner">
           <!-- H1: Main Section Title -->
          <h2 class="certificate">My Achievements</h2>
         <!-- Certifications Grid: Dynamic layout using CSS Grid -->
