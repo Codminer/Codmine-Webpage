@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
     <head>
        <meta charset="UTF-8">
@@ -33,6 +33,7 @@
             transition: background-color 0.3s, border 0.3s, box-shadow 0.3s;
         }
         
+           
         /* Social Icon Hover Effect */
         .social-icon {
             transition: all 0.3s ease-in-out;
@@ -48,18 +49,22 @@
 
           /* Light Glassmorphism Effect for Cards */
         .cert-card {
-            display: inline-flex;
+            display: grid;
             flex-direction: column;
             postion: relative;
             justify-content: center;
+            align-items: center;
             gap: 10px;
-            width: 400px;
+            width: 340px;
             margin: 10px auto;
             background-color: rgba(255, 255, 255, 0.02); /* Light transparent background */
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(0, 1, 1, 0.1); /* Subtle border */
             transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
+           max-width: 1200px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    
         }
 
         .cert-card:hover {
@@ -130,13 +135,13 @@
             </div>  
        </section>
     
-        <section id="about" 
-        class="w-full max-w-4xl bg-gray-750/80 p-6 sm:p-10 lg:p-16 rounded-xl transition-all duration-300 light-gray-glow">
+        <section id="about" class="w-full max-w-4xl bg-gray-750/80 p-6 sm:p-10 lg:p-16 rounded-xl transition-all duration-300 light-gray-glow">
+        
         
         <!-- Header Block -->
         <div class="text-center mb-10 sm:mb-14">
             <!-- H2: Sub-role and focus -->
-            <h2 class="mt-3 text-4xl sm:text-3xl text-skyblue-500 font-bold">
+            <h2 class="mt">
                 Digital Craftsperson & UX Advocate.
             </h2>
         </div>
@@ -160,8 +165,8 @@
         </div>
 
         <!-- Core Competencies (h and p elements) -->
-        <div class="mt-12 pt-8 border-t border-gray-400">
-            <h3 class="text-2xl font-bold text-gray-400 mb-4 text-center uppercase tracking-wider">
+        <div class="mt-12 pt-8 border-t border-gray-500">
+            <h3 class="text-2xl font-semibold text-gray-500 mb-4 text-center uppercase tracking-wider">
                 Key Deliverables
             </h3>
             
