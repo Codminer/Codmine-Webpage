@@ -118,7 +118,8 @@ body {
             font-size: 0.95rem;
             font-weight: 500;
             padding: 0.5rem 0.75rem;
-            border-radius: 8px;
+            margin: 0 auto;
+            border-radius: 10px;
             transition: var(--transition);
         }
 
@@ -327,13 +328,7 @@ p, h3 {
   font-weight: 400 !important;
   
   }
-.subtn {
-  color: #d5d5d5;
-  top: 0;
-  left: 150px;
-  width: 120px;
-  
-  }
+
 
 
 /* Welcome and others section styles */
@@ -400,7 +395,7 @@ p, h3 {
             flex-wrap: nowrap;
         }
 
-  .work, #project-title, .certificate {
+ .dgcraft, .work, #project-title, .certificate {
     display:  grid;
     position: relative;
     flex-direction: column;
@@ -669,9 +664,11 @@ textarea:focus {
   border: 2px solid #cec;
 }
 
-button {
-  display: grid;
+.subtn {
+  display: inline-block;
+  text-align: center;
   position: relative;
+  color: #e0e0e0;
   background-color: green;
   width: 38px;
   font-weight: 500;
@@ -680,8 +677,8 @@ button {
   border-radius: var(--border-radius);
   padding: 20px auto;
   cursor: pointer;
-  left: 10px;
-  top: 7px;
+  left: 160px;
+  top: 0;
   transition: all 0.3s ease;
 }
 
@@ -691,7 +688,7 @@ button {
   justify-content: center;
   text-align: center;
   gap: 10px;
-  padding: 5px;
+  padding: 10px;
   background-color: green;
   border-radius: var(--border-radius);
   font-size: 1rem;
@@ -699,11 +696,9 @@ button {
   
 }
 
-button:hover {
-  box-shadow: 0 7px 15px rgba(74, 222, 128, 0.3);
+.subtn:hover {
   color: azure;
-  text-align: center;
-  
+  font-weight: 500;
 }
 
 
@@ -823,4 +818,3 @@ footer {
    gap: 20px;
         }
 }
-
