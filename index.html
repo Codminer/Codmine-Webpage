@@ -47,33 +47,6 @@
               text-shadow: 0 7px 15px rgba(25, 25, 120, 0.75) !important;
 
         }
-
-          /* Light Glassmorphism Effect for Cards */
-        .cert-card {
-            display: grid;
-            flex-direction: column;
-            postion: relative;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            width: 350px;
-            margin: 10px auto;
-            background-color: rgba(255, 255, 255, 0.03); /* Light transparent background */
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(0, 1, 1, 0.1); /* Subtle border */
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
-           max-width: 1200px;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    
-        }
-
-        .cert-card:hover {
-            transform: translateY(-5px); /* Pronounced lift effect */
-            box-shadow: 0 3px 5px #ddd;       
-            border-color: rgba(162, 200,210, 0.3);
-       
-        }
      
         /* Custom badge styling - Lime Green/Yellow */
         .badge-icon {
@@ -94,7 +67,7 @@
                 <span class="bar"></span>
                 <span class="bar"></span>
             </button>
-          <span style="font-weight: bold; font-size: 1rem;"><a href="https://codminer.github.io/Codmine-Webpage/">Portfolio</a></span>
+          <span style="font-weight: 500; font-size: 1rem;"><a href="https://codminer.github.io/Codmine-Webpage/">Portfolio</a></span>
         </div>
 
         <ul class="nav-links" id="navLinks">
@@ -122,25 +95,28 @@
                   <h1><div class="intro"><span>H</span><span>e</span><span>l</span><span>l</span><span>o</span><span>!</span></div></h1><br>
                   <h2 class="name">I'am<div class="owner"><span>C</spain><span>o</span><span>d</span><span>m</span><span>i
                   </span><span>n</span><span>e</span><span>r</span></div></h2>
-                    <div class="role">
-                     <div class="static-text">A</div><ul class ="dynamic-text">
-                     <li><span>Developer</span></li>   
-                     <li><span>Designer</span></li> 
-                     <li><span>Creator</span></li> 
-                     <li><span>Freelancer</span></li> 
-                      </ul>
-                    </div>   
-            </div>  
+                   <div class="role">
+  <div class="static-text">A</div>
+  <div class="dynamic-wrapper">
+    <ul class="dynamic-text">
+      <li><span>Developer</span></li>
+      <li><span>Designer</span></li>
+      <li><span>Creator</span></li>
+      <li><span>Freelancer</span></li>
+      <li><span>Developer</span></li>
+    </ul>
+  </div>
+</div>
        </section>
     
  <section id="about" class="w-full max-w-3xl mx-auto p-6 sm:p-10 lg:p-16 rounded-xl transition-all duration-300">
     
-    <div class="text-center mb-10 sm:mb-14">
+    <div>
         <h2 class="dgcraft"> Digital Craftsperson &<span class="text-blue-400">UI/UX Advocate.</span></h2>
     </div>
 
     <div class="space-y-8">
-        <blockquote class="relative border-l-4 border-blue-500 pl-6 sm:pl-8 py-2">
+        <blockquote class="relative border-l-4 border-blue-400 pl-6 sm:pl-8 py-2">
             <p class="text-xl sm:text-xl font-light italic text-gray-400">
                 "I build what users touch. That requires more than just code; it demands deep proficiency in <span class="text-light font-small">HTML, CSS, and JavaScript</span> to guarantee performance and pixel precision."
             </p>
@@ -274,111 +250,53 @@
        </div>
        </section>
 
-        <section id="certs" 
-        class="cert-card-contaner">
-          <!-- H1: Main Section Title -->
-         <h2 class="certificate">My Achievements</h2>
-        <!-- Certifications Grid: Dynamic layout using CSS Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2">
-            <!-- Certification Card 1: freeCodeCamp Responsive Design (TAKES FULL WIDTH ON MOBILE) -->
-               <div class="p-8 rounded-xl cert-card">
-                    <div class="text-3xl mb-4 badge-icon">
-                        <i class="fas fa-desktop"></i>
-                    </div>
-                    <!-- H2: Certification Name -->
-                    <h3 class="text-3xl mb-4 badge-icon">Responsive Web Design Certification</h3>
-                 <!-- P: Issuing Authority & Focus -->
-                <p class="text-gray-500 text-xl">
-                    Authority: **freeCodeCamp**
-                </p>
-                <p class="text-gray-400 font-semibold mt-3 leading-relaxed">
-                    Verified mastery of **CSS Grid**, **Flexbox**, and Media Queries to architect layouts that adapt seamlessly to any device or screen size. This foundational certificate covers five key projects ensuring practical application of responsive principles.
-                </p>
-                <!-- H3: Completion Detail -->
-                <h4 class="text-m font-semibold mt-4 text-lime-300">
-                    Duration: 300+ Hours Completed
-                </h4>
-            </div>
-            
-            <!-- Certification Card 2: Front End Development Libraries (React/Redux) -->
-            <div class="p-8 rounded-xl cert-card">
-                <div class="text-3xl mb-4 badge-icon">
-                    <i class="fas fa-layer-group"></i>
-                </div>
-                <!-- H2: Certification Name -->
-                <h3 class="text-3xl mb-4 badge-icon">Front End Development Libraries</h3>
-                <!-- P: Issuing Authority & Focus -->
-                <p class="text-gray-500 text-xl">
-                    Authority: **freeCodeCamp**
-                </p>
-                <p class="text-gray-400 font-semibold mt-3 leading-relaxed">
-                    Deep dive into modern state management and component-based architecture using **React** and **Redux**.
-                </p>
-                <!-- H3: Completion Detail -->
-                <h4 class="text-m font-semibold mt-4 text-lime-300">
-                    Focus: React, Redux, Sass
-                </h4>
-            </div>
+      <section id="certs" class="certs-section">
+  <h2 class="section-title">My Achievements</h2>
 
-             <div class="p-8 rounded-xl cert-card">
-            <div class="text-3xl mb-4 badge-icon">
-                <div class="badge-icon">
-                    <i class="fab fa-js-square"></i>
-                </div>
-                <h3>JavaScript Algorithms and Data Structures</h3>
-            </div>
-            <p class="text-gray-500 text-xl">
-                Authority: **freeCodeCamp**
-            </p>
-            <p class="text-gray-400 font-semibold mt-3 leading-relaxed">
-                Mastery of core JavaScript concepts, including ES6 features, functional programming, and solving complex algorithmic challenges.
-            </p>
-            <h4 class="text-m font-semibold mt-4 text-lime-300">
-                Focus: ES6, Functional Programming, OOP
-            </h4>
-        </div>
-            
-            <!-- Certification Card 3: New Framework Specialization (Angular/Vue) -->
-            <div class="p-8 rounded-xl cert-card">
-                <div class="text-3xl mb-4 badge-icon">
-                    <i class="fab fa-angular"></i> <!-- Using Angular icon as an example -->
-                </div>
-                <!-- H2: Certification Name -->
-                <h3 class="text-3xl mb-4 badge-icon">Advanced Framework Specialization</h3>
-                <!-- P: Issuing Authority & Focus -->
-                <p class="text-gray-500 text-xl">
-                    Authority: **Global Dev Academy**
-                </p>
-                <p class="text-gray-400 font-semibold mt-3 leading-relaxed">
-                    Specialized training in complex application structure, reactive programming, and testing with the **Angular Framework**.
-                </p>
-                <!-- H3: Completion Detail -->
-                <h4 class="text-m font-semibold mt-4 text-lime-300">
-                    Focus: Angular, RxJS, CLI
-                </h3>
-            </div>
-            
-            <!-- Certification Card 4: Web Accessibility Specialist -->
-            <div class="p-8 rounded-xl cert-card">
-                <div class="text-3xl mb-4 badge-icon">
-                    <i class="fas fa-wheelchair"></i>
-                </div>
-                <!-- H2: Certification Name -->
-                <h3 class="text-3xl mb-4 badge-icon">Web Accessibility (A11Y) Expert</h3>
-                <!-- P: Issuing Authority & Focus -->
-                <p class="text-gray-500 text-xl">
-                    Authority: **UX Standards Institute**
-                </p>
-                <p class="text-gray-400 font-semibold mt-3 leading-relaxed">
-                    Commitment to inclusive development, verified mastery of **WCAG 2.1** and practical **ARIA** implementation.
-                </p>
-                <!-- H3: Completion Detail -->
-                <h4 class="text-m font-semibold mt-4 text-lime-300">
-                    Focus: WCAG 2.1, ARIA
-                </h4>
-            </div>
-        </div>
-     </section>
+  <div class="certs-grid">
+    
+    <div class="cert-card">
+      <div class="badge-icon"><i class="fas fa-desktop"></i></div>
+      <h3>Responsive Web Design</h3>
+      <p class="authority">Authority: <strong>freeCodeCamp</strong></p>
+      <p class="description">
+        Verified mastery of <strong>CSS Grid</strong>, <strong>Flexbox</strong>, and Media Queries to architect layouts that adapt seamlessly.
+      </p>
+      <h4 class="duration">300+ Hours Completed</h4>
+    </div>
+
+    <div class="cert-card">
+      <div class="badge-icon"><i class="fas fa-layer-group"></i></div>
+      <h3>Front End Development Libraries</h3>
+      <p class="authority">Authority: <strong>freeCodeCamp</strong></p>
+      <p class="description">
+        Deep dive into modern state management and component-based architecture using <strong>React</strong> and <strong>Redux</strong>.
+      </p>
+      <h4 class="duration">Focus: React, Redux, Sass</h4>
+    </div>
+
+    <div class="cert-card">
+      <div class="badge-icon"><i class="fab fa-js-square"></i></div>
+      <h3>JavaScript Algorithms</h3>
+      <p class="authority">Authority: <strong>freeCodeCamp</strong></p>
+      <p class="description">
+        Mastery of core JavaScript concepts, including ES6 features, functional programming, and complex algorithm challenges.
+      </p>
+      <h4 class="duration">Focus: ES6, OOP, Logic</h4>
+    </div>
+
+    <div class="cert-card">
+      <div class="badge-icon"><i class="fas fa-wheelchair"></i></div>
+      <h3>Web Accessibility (A11Y)</h3>
+      <p class="authority">Authority: <strong>UX Standards Institute</strong></p>
+      <p class="description">
+        Commitment to inclusive development, verified mastery of <strong>WCAG 2.1</strong> and practical <strong>ARIA</strong> implementation.
+      </p>
+      <h4 class="duration">Focus: WCAG 2.1, ARIA</h4>
+    </div>
+
+  </div>
+</section>
 
      <!-- Projects Section -->
      <!-- This section will showcase your various projects -->
@@ -389,7 +307,7 @@
              <div class="project-box">
                  <div class="project-image">
                   <a href="https://codepen.io/Dileep-Kumar-the-vuer/full/MYwBYaZ" target="_blank" class="block w-full">
-                  <img src="https://www.gccports.com/media/news-images/d2493-skycel.gif" alt="Survey form">
+                  <img src="https://images.unsplash.com/photo-1651129518142-e0830a4c184b?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHJlc3BvbnNpdmUlMjB3ZWJzaXRlfGVufDB8fDB8fHww" alt="Survey form">
                     <figcaption>Dashboard</figcaption>
                   </a>
                 </div>
@@ -399,9 +317,9 @@
                <div class="project-image">
                 <!-- Link to the external project, opens in a new tab -->
                 <a href="https://codepen.io/Dileep-Kumar-the-vuer/full/vELZdRe" target="_blank" class="block w-full">
-                    <img class="project-image" src="https://tse1.mm.bing.net/th/id/OIP.uZ8WHamIvS6q035Ou2JynQHaEo?w=960&h=600&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Tribute Page">
+                    <img class="project-image" src="https://images.unsplash.com/photo-1634084462412-b54873c0a56d?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHJlc3BvbnNpdmUlMjB3ZWJzaXRlfGVufDB8fDB8fHww" alt="Tribute Page">
                     <!-- Project title with a distinct style -->
-                     <figcaption></figcaption>
+                     <figcaption>Tribute Page</figcaption>
                 </a>
             </div>
            </div>
@@ -409,7 +327,7 @@
             <div class="project-box">
                <div class="project-image">
                 <a href="https://codepen.io/Dileep-Kumar-the-vuer/full/azdwrXZ" target="_blank" class="block w-full">
-                    <img src="https://i.harborcompliance.com/images/service/industry/engineering/industry-engineering-hero-lg.jpg" alt="Random Quote">
+                    <img src="https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGRldmVsb3BlcnxlbnwwfHwwfHx8MA%3D%3D" alt="Random Quote">
                      <figcaption>Weather App</figcaption>
                 </a>
             </div>
@@ -418,7 +336,7 @@
            <div class="project-box">
             <div class="project-image">
                 <a href="https://codepen.io/Dileep-Kumar-the-vuer/full/pvgwaMo" target="_blank" class="block w-full">
-                    <img src="https://pipsqueezecreative.com/wp-content/uploads/2020/01/Sligo2.jpg" alt="Documentation Page">
+                    <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cmVzcG9uc2l2ZSUyMHdlYiUyMGRlc2lnbnxlbnwwfHwwfHx8MA%3D%3D" alt="Documentation Page">
                      <figcaption>Media Clone</figcaption>
                 </a>
             </div>
@@ -550,4 +468,5 @@
     <script src="index.js"></script>
     </body>
 </html>
+
 
