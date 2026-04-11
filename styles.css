@@ -212,7 +212,7 @@ span a:hover {
 }
 
 .role .static-text {
-  top: 0;
+  margin-top: -0.54rem;
   left: 0;
   color: var(--text-main); 
   font-family: Arial, sans-serif;
@@ -228,7 +228,7 @@ span a:hover {
 }
 
 .role .dynamic-text {
-  top: 0;
+  margin-top: -0.54rem;
   left: 0;
   list-style: none;
   padding: 0;
