@@ -1,31 +1,36 @@
 
 :root {
  --primary-color: #3a732d;
-  --card-bg: rgba(255, 255, 255, 0.1);
+  --card-bg: #0f172a;
+  --border-speed: 4s;
   --border-color: #d3d3d3;
   --shadow: rgba(0, 0, 0, 0.05);
   --border-radius: 10px;
-  --bg-main: #fff;
+  --bg-main: #fffff5;
   --text-light: #61b0be;
   --text-gray: #999;
   --highlight-azure: #61b0be;
    --accent: #0b57d0;
-   --hover-bg: rgba(0, 0, 0, 0.75);
+   --hover-bg: rgba(0, 0, 40, 0.90);
    --sidebar-width: 18%;
   --sidebar-top: 0;
   --navbar-top: 0;
   --sidebar-collapsed: 72px;
-  --bg-nav: #f0f4f9;
-  --text-main: #1f1f1f;
-  --accent: #0b57d0;
-  --transition: all 0.3s ease;
+  --bg-nav: none;
+  --text-main: #777;
+   --transition: all 0.3s ease;
+  --text-size: 2rem;
+  --line-height: 90px;
+  --bg-color: #fffff5; /* Must match your body background */
         }
 
            * {        
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-           font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+      
         }
 
 /* Base body styles */
@@ -36,7 +41,8 @@ body {
     height: 100vh;
     background-color: var(--bg-main);
     color: var(--text-main);
-    font-family: Arial, Helvetica, sans-serif;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
     line-height: 1.5; /* Improved readability for body text */
     margin: 0;
     padding: 0;
@@ -44,18 +50,154 @@ body {
     scroll-behavior: smooth; /* Smooth scrolling for anchor links */
     object-fit: cover;
     transition: var(--transition);
-
   
 }
 
         [data-theme="dark"] {
-            --bg-main: #131314;
-            --bg-nav: #1e1f20;
+            --bg-main: #0f172a;
             --text-main: #e3e3e3;
+            --bg-nav: none;
             --accent: #a8c7fa;
             --hover-bg: rgba(255, 255, 255, 0.1);
           
         }
+
+/* scrolling arow css */
+ .scroll-section {
+            height: 20vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fffff5;
+            position: relative;
+        }
+
+        /* 2. The Circle Container */
+        .scroll-button {
+            position: absolute;
+            bottom: 30px;
+            width: 40px;
+            height: 40px;
+            border: 1.5px solid #e2e2e2; 
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background-color: white;
+            text-decoration: none;
+        }
+
+        /* Hover effect */
+        .scroll-button:hover {
+            border-color: #0078d4; /* Change color on hover */
+            background-color: #f0f7ff;
+            transform: translateY(3px); /* Subtle move down on hover */
+        }
+
+        /* 3. The Arrow Symbol (SVG) */
+        .arrow-icon {
+            width: 20px;
+            height: 20px;
+            fill: none;
+            stroke: #5f5f5f; /* Arrow color */
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-button:hover .arrow-icon {
+            stroke: #0078d4; /* Arrow changes color on hover */
+        }
+
+        /* 4. Smooth Bouncing Animation */
+        @keyframes bounce {
+            0%, 25%, 50%, 75%, 100% {
+                transform: translateY(0);
+            }
+            33% {
+                transform: translateY(5px);
+            }
+            66% {
+                transform: translateY(3px);
+            }
+        }
+
+/* animated border css */
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+
+.card-container {
+  position: relative;
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  z-index: 0;
+}
+
+/* The Animated Border */
+.card-container::before {
+  content: '';
+  position: absolute;
+  inset: -2px; /* Border thickness */
+  z-index: -1;
+  background: conic-gradient(
+    from var(--angle), 
+    #00f2fe, #4facfe, #7000ff, #f006ff, #00f2fe
+  );
+  border-radius: 22px;
+  animation: rotate-gradient var(--border-speed) linear infinite;
+}
+
+/* The Glow Effect (Blurry layer behind) */
+.card-container::after {
+  content: '';
+  position: absolute;
+  inset: -10px;
+  z-index: -2;
+  background: conic-gradient(
+    from var(--angle), 
+    #00f2fe, #4facfe, #7000ff, #f006ff, #00f2fe
+  );
+  border-radius: 22px;
+  filter: blur(25px);
+  opacity: 0.5;
+  animation: rotate-gradient var(--border-speed) linear infinite;
+}
+
+/* Glassmorphism Content Box */
+.glass-content {
+  width: 100%;
+  height: 100%;
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+@keyframes rotate-gradient {
+  to {
+    --angle: 360deg;
+  }
+}
+
+/* navbar */
 
  .navbar {
             display: flex;
@@ -64,10 +206,9 @@ body {
             padding: 0.75rem 1.5rem;
             background-color: var(--bg-nav);
             height: 64px;
-            position: sticky;
+            position: relative;
             top: 0;
-            z-index: 1000;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            z-index: 10;
         }
 
 
@@ -75,7 +216,10 @@ body {
         .nav-left {
             display: flex;
             align-items: center;
+            background-color: var(--bg-nav);
             gap: 1rem;
+            position: relative;
+            
         }
 
         .menu-btn {
@@ -171,8 +315,8 @@ span a:hover {
     
    .name {
     color: var(--text-main); 
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 3rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2rem;
     font-weight: 500;
     text-align: center;
 
@@ -198,11 +342,6 @@ span a:hover {
     position: relative;
    }
   
- :root {
-  --text-size: 3rem;
-  --line-height: 90px;
-  --bg-color: #ffffff; /* Must match your body background */
-}
 
 .role {
   display: inline-flex;
@@ -215,7 +354,7 @@ span a:hover {
   margin-top: -0.54rem;
   left: 0;
   color: var(--text-main); 
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: var(--text-size);
   font-weight: 500;
 }
@@ -238,7 +377,7 @@ span a:hover {
 }
 
 .dynamic-text li {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: seagreen;
   font-size: var(--text-size);
   font-weight: 500;
@@ -285,14 +424,14 @@ span a:hover {
 }
   .intro span {
     position: relative;
-    font-family:  Arial, Helvetica, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     top: 0;
     margin: 0 auto;
     padding: 0 auto;
     color: var(--text-main); 
     text-shadow: 0 3px 5px #ccc;
     display: inline-block;
-    font-size: 4rem;
+    font-size: 2.5rem;
     animation: bounce 0.5s ease infinite alternate;
     font-weight: 600;
 
@@ -315,13 +454,13 @@ span a:hover {
   
 .owner span {
     position: relative;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     top: 0;
     margin: 0 auto;
     padding: 0 auto;
     color: #A9A9A9;
     display: flex;
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 500;
     animation: slide-in 1.5s linear 0s infinite alternate-reverse;
 
@@ -352,10 +491,12 @@ span a:hover {
   
 p, h3 {
   font-weight: 400 !important;
+ 
   
   }
 h4 {
-  font-weight: 500 !important;
+  font-weight: 400 !important;
+  
   }
 
 
@@ -375,8 +516,8 @@ h4 {
     box-sizing: border-box;
     margin: 0 auto;
     padding: 0 auto;
-    font-family: Arial, Helvetica, sans-serif;
-
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
 }
 
   .container {
@@ -434,8 +575,8 @@ h4 {
     display:  grid;
     position: relative;
     flex-direction: column;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.5rem;
     font-weight: 400;
     text-align: center;
     justify-content: center;
@@ -477,7 +618,7 @@ footer {
 
 .skills-section h2 {
     margin: 0 auto;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 400;
     font-family: Arial, Helvetica, sans-serif;
 
@@ -491,7 +632,7 @@ footer {
     padding-bottom: 5px;
     margin-top: 40px;
     margin-bottom: 30px;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
 }
 
 /* 2. Responsive Layout using CSS Grid for Categories */
@@ -543,7 +684,7 @@ footer {
 .skill-card:hover {
     transform: translateY(-8px);
     /* Subtle background change */
-    background-color: #f5f5f5; 
+    background-color: #fffff3; 
 
        }
   
@@ -617,10 +758,10 @@ footer {
 
 .touch {
   color: var(--primary-color);
-  font-size: 2.2rem;
+  font-size: 1.5rem;
   margin-bottom: 10px;
   text-align: center;
-  font-weight: bold;
+  font-weight: 500 !important;
 }
 
 .para {
@@ -628,7 +769,7 @@ footer {
   color: var(--text-main);
   text-align: center;
   font-weight: 400 !important;
-  font-size: 1.2rem !important;
+  font-size: 1.25rem !important;
 }
 #name::placeholder, #email::placeholder, #sub::placeholder, #tel::placeholder, .message-field::placeholder {
 color: #999; 
@@ -708,13 +849,13 @@ textarea:focus {
   position: relative;
   color: #e0e0e0;
   background-color: green;
-  width: 94px;
+  width: 236px;
   font-size: 1.2rem;
   border: none;
   border-radius: var(--border-radius);
   padding: 1rem auto;
   cursor: pointer;
-  left: 160px;
+  left: 88px;
   margin-top: 3px;
   transition: all 0.3s ease;
 }
@@ -733,9 +874,9 @@ textarea:focus {
   
 }
 
-.btn-content:hover {
+.subtn:hover {
   color: azure;
-  font-weight: 500;
+  font-weight: 600;
   box-shadow: 0 5px 12px rgba(100, 180, 100, 0.5);
 }
 
@@ -780,10 +921,10 @@ textarea:focus {
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   margin-bottom: 40px;
   color: var(--text-main);
-  font-family: Arial, sans-serif;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* 1. The Grid Layout (The Fix) */
@@ -812,8 +953,10 @@ textarea:focus {
 
 .cert-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 7px 15px #d5d5d5; 
+  box-shadow: 0 5px 12px #ccc; 
   border-color: var(--highlight-azure);
+  background: var(--hover-bg);
+  
  
 }
 
@@ -825,7 +968,7 @@ textarea:focus {
 }
 
 .cert-card h3 {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   margin-bottom: 0.5rem;
   color: var(--text-main);
 }
@@ -876,10 +1019,6 @@ textarea:focus {
     grid-template-columns: 1fr;
   }
   
-  .section-title {
-    font-size: 2rem;
-  }
-  
   .cert-card {
     padding: 1.5rem;
   }
@@ -913,6 +1052,7 @@ footer {
   .input-group {
     grid-template-columns: 1fr;
   }
+  
 }
 
   
@@ -951,3 +1091,10 @@ footer {
   gap: 10px;
   box-sizing: border-box;
   } 
+
+  .card-container {
+    width: auto;
+    height: auto;
+    }
+          
+  }        
