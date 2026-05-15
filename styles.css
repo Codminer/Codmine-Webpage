@@ -7,11 +7,11 @@
   --shadow: rgba(0, 0, 0, 0.05);
   --border-radius: 10px;
   --bg-main: #fffff5;
-  --text-light: #61b0be;
-  --text-gray: #999;
-  --highlight-azure: #61b0be;
+  --text-light: #00b3e6;
+  --text-gray: #888;
+  --highlight-azure: #00b3e6;
    --accent: #0b57d0;
-   --hover-bg: rgba(0, 0, 40, 0.90);
+   --hover-bg: rgba(5, 5, 10, 0.90);
    --sidebar-width: 18%;
   --sidebar-top: 0;
   --navbar-top: 0;
@@ -138,10 +138,11 @@ body {
   position: relative;
   width: auto;
   height: auto;
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   border-radius: 20px;
+  padding: 3px;
   z-index: 0;
 }
 
@@ -155,7 +156,7 @@ body {
     from var(--angle), 
     #00f2fe, #4facfe, #7000ff, #f006ff, #00f2fe
   );
-  border-radius: 22px;
+  border-radius: 20px;
   animation: rotate-gradient var(--border-speed) linear infinite;
 }
 
@@ -169,8 +170,8 @@ body {
     from var(--angle), 
     #00f2fe, #4facfe, #7000ff, #f006ff, #00f2fe
   );
-  border-radius: 22px;
-  filter: blur(25px);
+  border-radius: 20px;
+  filter: blur(10px);
   opacity: 0.5;
   animation: rotate-gradient var(--border-speed) linear infinite;
 }
@@ -567,11 +568,19 @@ h4 {
             object-fit: cover;
             flex-wrap: nowrap;
         }
-.dgcraft {
-    color: var(--text-main); /* Automatically uses #1f1f1f or #e3e3e3 from your root */
-}
 
- .dgcraft, .work, #project-title, .certificate {
+.dgcraft {
+  color: var(--text-main);
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  }
+
+.UX {
+    color: #00b3e6 !important;
+    font-size: 1.5rem;
+}
+  
+.work, #project-title, .certificate {
     display:  grid;
     position: relative;
     flex-direction: column;
@@ -583,6 +592,7 @@ h4 {
     align-items: center;
     overflow: hidden;
     flex-wrap: nowrap;
+    
 
  }
 
@@ -603,7 +613,7 @@ footer {
     height: 92px;
     width: 100%;
     padding: 0 auto;
-    color: #888; 
+    color: #777; 
      background-color: var(--bg-nav);
 }
  
@@ -684,7 +694,8 @@ footer {
 .skill-card:hover {
     transform: translateY(-8px);
     /* Subtle background change */
-    background-color: #fffff3; 
+    background: var(--hover-bg);
+  
 
        }
   
@@ -1075,7 +1086,7 @@ footer {
     width: 100%;
     padding: 0 auto;
     color: #888; 
-     background-color: var(--bg-nav);
+    background-color: var(--bg-nav);
 }
              
     .certs-grid {
