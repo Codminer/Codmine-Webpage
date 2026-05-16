@@ -1,23 +1,23 @@
 
 :root {
  --primary-color: #3a732d;
-  --card-bg: #0f172a;
+  --card-bg: #0f170a;
   --border-speed: 4s;
   --border-color: #d3d3d3;
   --shadow: rgba(0, 0, 0, 0.05);
   --border-radius: 10px;
   --bg-main: #fffff5;
-  --text-light: #00b3e6;
-  --text-gray: #888;
-  --highlight-azure: #00b3e6;
-   --accent: #0b57d0;
+  --text-light: #0aacc0;
+  --text-gray: #999;
+  --highlight-azure: #0aacc0;
+   --accent: #0b57c0;
    --hover-bg: rgba(205, 205, 250, 0.1);
    --sidebar-width: 18%;
   --sidebar-top: 0;
   --navbar-top: 0;
   --sidebar-collapsed: 72px;
   --bg-nav: none;
-  --text-main: #777;
+  --text-main: #a0b0c3;
    --transition: all 0.3s ease;
   --text-size: 2rem;
   --line-height: 90px;
@@ -602,7 +602,7 @@ h4 {
  }
 
   #project-title:hover {
-    color: seagreen;
+    color: #3a732d;
     transition: all 0.3s ease-in-out;
     transform: scale(0.95);
     text-shadow: 0 3px 7px rgba(240, 240, 250, 0.33); 
