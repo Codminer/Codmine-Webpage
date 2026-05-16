@@ -459,7 +459,7 @@ span a:hover {
     top: 0;
     margin: 0 auto;
     padding: 0 auto;
-    color: #A9A9A9;
+    color: #a9a9a9;
     display: flex;
     font-size: 2rem;
     font-weight: 500;
@@ -468,7 +468,7 @@ span a:hover {
   }
   @keyframes slide-in {
     0% {
-      color: #1e1e1e;
+      color: #a0b0c3;
       top: 0px;
       left: 0px;
     }
@@ -484,7 +484,7 @@ span a:hover {
       left: 0px;
     }
    100% {
-     color: #1e1e1e;
+     color: #a0b0c3;
       top: 0px;
       left: 0px;
    }
