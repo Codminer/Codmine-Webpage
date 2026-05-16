@@ -468,23 +468,23 @@ span a:hover {
   }
   @keyframes slide-in {
     0% {
-      color: #a0b0c3;
+      color: #0f172a;
       top: 0px;
       left: 0px;
     }
      
     33.33% {
-      color: #fffff3;
+      color: #fffff5;
       top: 0px;
       left: 0px;
     }
      66.66% {
-      color: #fffff3;
+      color: #fffff5;
       top: 0px;
       left: 0px;
     }
    100% {
-     color: #a0b0c3;
+     color: #0f172a;
       top: 0px;
       left: 0px;
    }
