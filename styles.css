@@ -869,8 +869,8 @@ textarea:focus {
   display: inline-block;
   text-align: center;
   position: relative;
-  color: #e0e0e0;
-  background-color: green;
+  color: #d9d9d9;
+  background-color: seagreen;
   width: 236px;
   font-size: 1.2rem;
   border: none;
@@ -889,20 +889,28 @@ textarea:focus {
   text-align: center;
   gap: 10px;
   padding: 10px;
-  background-color: green;
+  background-color: seagreen;
   border-radius: var(--border-radius);
   font-size: 1rem;
   font-weight: 400;
   
 }
 
+.btn-content:active {
+   box-shadow: 0 5px 12px rgba(100, 180, 100, 0.75);
+   background-color: var(--card-bg);
+}
 .subtn:hover {
-  color: azure;
+  color: #e1e1e1;
   font-weight: 600;
-  box-shadow: 0 5px 12px rgba(100, 180, 100, 0.5);
+ 
 }
 
-
+.subtn:active {
+  color: azure;
+  background-color: var(--card-bg);
+ 
+}
 .contact-info {
   left: 0;
   margin-top: 10px;
