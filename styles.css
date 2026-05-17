@@ -17,11 +17,12 @@
   --navbar-top: 0;
   --sidebar-collapsed: 72px;
   --bg-nav: #F9F9F9;
-  --text-main: #555;
+  --text-main: #333;
    --transition: all 0.3s ease;
   --text-size: 2rem;
   --line-height: 90px;
   --bg-color: #F9F9F9; 
+  --accent: #add8f6;
         }
 
            * {        
@@ -235,7 +236,7 @@ body {
         }
 
         .menu-btn:hover {
-            background-color: rgba(0,0,0,0.05);
+            color: rgba(0,0,0,0.05);
         }
 
         [data-theme="dark"] .menu-btn:hover {
@@ -261,7 +262,7 @@ body {
             color: var(--text-main);
             font-size: 0.95rem;
             font-weight: 500;
-            padding: 0.5rem 0.75rem;
+            padding: 0.75rem 0;
             margin: 0 auto;
             border-radius: 10px;
             transition: var(--transition);
@@ -311,6 +312,7 @@ span a:hover {
             align-items: center;
             justify-content: center;
             overflow: hidden;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
     
    .name {
@@ -371,7 +373,7 @@ span a:hover {
   left: 0;
   list-style: none;
   padding: 0;
-
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   /* 5 items * 90px = 450px. We slide 4 steps to the 5th item */
   animation: slide 6s steps(4) infinite;
 }
@@ -467,7 +469,7 @@ span a:hover {
   }
   @keyframes slide-in {
     0% {
-      color: #1e1e1e;
+      color: #0A192F;
       top: 0px;
       left: 0px;
     }
@@ -478,12 +480,12 @@ span a:hover {
       left: 0px;
     }
      66.66% {
-      color: #F9F9F9;
+      color: #f9f9f9;
       top: 0px;
       left: 0px;
     }
    100% {
-     color: #1e1e1e;
+     color: #0A192F;
       top: 0px;
       left: 0px;
    }
@@ -492,11 +494,12 @@ span a:hover {
 .adr, h3 {
   font-weight: 400 !important;
   color: var(--secondary-color) !important;
- 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   
   }
 h4 {
   font-weight: 400 !important;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   
   }
 
@@ -602,7 +605,7 @@ h4 {
  }
 
   #project-title:hover {
-    color: #38BDF8;
+    color: seagreen;
     transition: all 0.3s ease-in-out;
     transform: scale(0.95);
     text-shadow: 0 3px 7px rgba(240, 240, 250, 0.33); 
@@ -619,7 +622,7 @@ footer {
     width: 100%;
     padding: 0 auto;
     color: #777; 
-     background-color: var(--bg-nav);
+    background-color: var(--bg-nav);
 }
  
 
@@ -635,18 +638,18 @@ footer {
     margin: 0 auto;
     font-size: 1.5rem;
     font-weight: 400;
-    font-family: Arial, Helvetica, sans-serif;
-
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Category Headers */
 .skill-category h3 {
-    color: var(--text-light);
+    color: var(--text-main) !important;
     display: inline-block;
     padding-bottom: 5px;
     margin-top: 40px;
     margin-bottom: 30px;
     font-size: 1.25rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* 2. Responsive Layout using CSS Grid for Categories */
@@ -709,11 +712,13 @@ footer {
     margin-top: 10px;
     margin-bottom: 5px;
     font-size: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .skill-card p {
     color: #a9a9a9; /* Light gray for body text */
     font-size: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 
@@ -774,6 +779,7 @@ footer {
 .touch {
   color: var(--primary-color);
   font-size: 1.5rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin-bottom: 10px;
   text-align: center;
   font-weight: 500 !important;
@@ -785,6 +791,7 @@ footer {
   text-align: center;
   font-weight: 400 !important;
   font-size: 1.25rem !important;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 #name::placeholder, #email::placeholder, #sub::placeholder, #tel::placeholder, .message-field::placeholder {
 color: #999; 
@@ -1012,21 +1019,23 @@ textarea:focus {
 @media (max-width: 768px) {
   
     .nav-links {
-                position: fixed;
-                top: 64px;
+                position: absolute;
+                top: 60px;
                 left: -100%; /* Hidden by default */
                 flex-direction: column;
-                background-color: var(--bg-nav);
-                width: 250px;
-                height: calc(100vh - 64px);
+                background-color: none;
+                width: 200px;
+                height: calc(100vh - 60px);
                 padding: 2rem;
                 gap: 1rem;
                 transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-                box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+                
+                
             }
 
             .nav-links.active {
                 left: 0;
+                
             }
         
  .certs-grid {
