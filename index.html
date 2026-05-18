@@ -8,7 +8,6 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>My Personal Portfolio</title>
       <link rel="stylesheet" href="styles.css">
-      
     
       <!-- Load Font Awesome 6.x CDN for icons (MANDATORY for social icons) -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJc5wF5T7wJ9Z9R5zN/M0Ew3C6e5P5zR5e5zC6p5zN5w5zC5w5zN5w5zC5w5zN5w5zC5w5zN5w5zC5w5zN5w5zC5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -16,8 +15,6 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
     
      <style>
-       
-      
        
         /* Glassmorphism Card Style */
         .glass-card {
@@ -34,12 +31,12 @@
         .social-icon {
             transition: all 0.3s ease-in-out;
 
-            text-shadow: 0 7px 15px rgba(250, 250, 255, 0.95) !important;
+            text-shadow: 0 7px 15px rgba(255, 255, 255, 1) !important;
         }
         .social-icon:hover {
             transform: translateY(-3px) scale(1.2);
-            color: #c3c3c3 !important;
-            text-shadow: 0 5px 12px rgba(25, 25, 30, 0.3) !important;
+            color: #d3d3d3 !important;
+            text-shadow: 0 5px 12px rgba(250, 250, 250, 0.1) !important;
 
         }
      
@@ -82,7 +79,7 @@
 
         <!-- This section will take up the full height of the viewport -->
     <main class="main-container">
-       <section id="home" class="welcome-section">
+       <section id="home" class="reveal">
        <div id="Portfolio">
                   <div class="hero-section">
                   </div>
@@ -112,8 +109,8 @@
        </div>     
        </section>
     
- <section id="about" class="w-full max-w-3xl mx-auto p-6 sm:p-10 lg:p-16 rounded-xl transition-all duration-300">
-    
+ <section id="about" class="reveal">
+     <div class="w-full max-w-3xl mx-auto p-6 sm:p-10 lg:p-16 rounded-xl transition-all duration-300">
     <div>
         <h2 class="dgcraft"> Digital Craftsperson &<span class="gradient-text"> UI/UX Advocate.</span></h2>
     </div>
@@ -147,8 +144,7 @@
                         I ensure your site works perfectly across all devices.
                     </p>
                 </div>
-            </div>
-
+             </div>
             <div class="group relative p-6 rounded-lg bg-#0f172a transition-all duration-300 cursor-help">
                 <h4 class="text-lg font-semibold text-white group-hover:text-green-400 transition-colors">Optimized Performance</h4>
                 
@@ -158,8 +154,7 @@
                         Delivering smooth transitions by writing clean & minified code.
                     </p>
                 </div>
-            </div>
-
+          </div>
             <div class="group relative p-6 rounded-lg bg-#0f172a transition-all duration-300 cursor-help">
                 <h4 class="text-lg font-semibold text-white group-hover:text-purple-400 transition-colors">Accessibility (A11y)</h4>
                 
@@ -169,13 +164,15 @@
                          Using semantic HTML to screen readers for best experience.
                     </p>
                 </div>
+              </div>
             </div>
+          </div>
          </div>
-       </div>
-      </div>
-    </div>
+        </div>
+       </div>         
 </section>
-      <section id="skills" class="skills-section">
+      <section id="skills" class="reveal">
+     <div class="skills-section">
       <h2>My Core Frontend Skills</h2>
     
       <div class="skills-grid-container">
@@ -251,11 +248,12 @@
                 </div>
             </div>
         </div>
-
+       </div>
        </div>
        </section>
 
-      <section id="certs" class="certs-section">
+   <section id="certs" class="reveal">
+  <div class="certs-section">
   <h2 class="section-title">My Achievements</h2>
 
   <div class="certs-grid">
@@ -299,13 +297,13 @@
       </p>
       <h4 class="duration">Focus: WCAG 2.1, ARIA</h4>
     </div>
-
+    </div>
   </div>
 </section>
 
      <!-- Projects Section -->
      <!-- This section will showcase your various projects -->
-     <section id="projects">
+     <section id="projects" class="reveal">
         <h2 class="work">There are My projects</h2>
         <!-- Grid layout for project tiles, responsive across different screen sizes -->
         <div class="container">
@@ -374,7 +372,7 @@
      </section>
 
      <!-- This section provides ways for visitors to contact you -->
-     <section id="contact" class="reach">
+     <section id="contact" class="reveal">
      <!-- Main Contact Us Section -->
       <div class="form-container">
         <h3 class="touch">Get in Touch</h3>
@@ -396,11 +394,6 @@
               <i class="fas fa-phone"></i>
               <input id="tel" type="tel" placeholder="Phone..." />
             </div>
-
-            <div class="input-field">
-              <i class="fas fa-tag"></i>
-              <input id="sub" type="text" placeholder="Subject..." required />
-            </div>
           </div>
 
           <div class="message-field">
@@ -416,7 +409,7 @@
           </button>
         </form>
 
-        <div class="contact-info">
+        <address class="contact-info">
           <div class="info-item">
             <i class="fas fa-map-marker-alt"></i>
             <span class="adr">123 Main Street, City, Country</span>
@@ -430,8 +423,8 @@
             <i class="fas fa-phone"></i>
             <span class="adr">+1 234 567 8900</span>
           </div>
-        </div>
-      </div>
+        </d>
+      </address>
      </section>
      <!--FOOTER with Font Awesome Links-->
 
@@ -473,6 +466,5 @@
     <script src="index.js"></script>
     </body>
 </html>
-
 
 
