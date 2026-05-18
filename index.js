@@ -1,6 +1,5 @@
 
 
-
 const menuBtn = document.getElementById('menuBtn');
 const navLinks = document.getElementById('navLinks');
 const themeToggle = document.getElementById('themeToggle');
@@ -41,3 +40,26 @@ if (savedTheme) {
     htmlElement.setAttribute('data-theme', savedTheme);
     themeIcon.innerHTML = savedTheme === 'light' ? sunEmoji : moonIcon;
 }
+
+// smooth trigger effect
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // fire once
+      }
+    });
+  },
+  {
+    threshold: 0.15, // 15% visible to trigger
+    rootMargin: '0px 0px -40px 0px' // offset from bottom
+  }
+);
+
+// Observe all elements with .reveal class
+document.querySelectorAll('.reveal')
+  .forEach(el => observer.observe(el));
+
+
+
