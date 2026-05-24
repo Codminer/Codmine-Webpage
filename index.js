@@ -61,7 +61,7 @@ const observer = new IntersectionObserver(
 document.querySelectorAll('.reveal')
   .forEach(el => observer.observe(el));
 
-// star random moving effect
+
 (function () {
   const COUNT = 180, MAX_RADIUS = 1.2, MIN_RADIUS = 0.25, MAX_SPEED = 0.38;
   const canvas = document.getElementById('starfield-canvas');
@@ -98,7 +98,3 @@ document.querySelectorAll('.reveal')
 })();
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 041834d094811c12932e7c5a8b5cba60e999add3

@@ -214,8 +214,10 @@ body {
   padding: 2px;             /* ← controls border thickness */
   background: conic-gradient(from var(--angle), #00f2fe, #4bffbc, #7000fe, #c006fe, #00f2fe);
   animation: rotate-gradient 3s linear infinite;
+}
 
   /* punch out the interior, keep only the padding ring */
+ .element {
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
@@ -1312,14 +1314,14 @@ body {
 }
 .card-container {
   background-color: var(--bg-main);
-  position: reative; 
+  position: relative; 
   width: 100%; 
   box-sizing: border-box; 
   height: auto;
   backdrop-filter: blur(5px);
   border-radius: 10px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   justify-content: center;
   text-align: center;
   box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.05);
@@ -2275,8 +2277,4 @@ footer {
     height: auto;
     }
           
-<<<<<<< HEAD
   }        
-=======
-  }        
->>>>>>> 041834d094811c12932e7c5a8b5cba60e999add3
