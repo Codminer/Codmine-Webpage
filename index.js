@@ -98,3 +98,7 @@ document.querySelectorAll('.reveal')
 })();
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 041834d094811c12932e7c5a8b5cba60e999add3
