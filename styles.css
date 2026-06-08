@@ -692,13 +692,13 @@ figcaption {
   flex-direction: column;
   position: relative;
   left: 86px;
-  width: 240px;
+  width: 220px;
 }
 
 .message-field {
   position: relative;
   left: 86px;
-  width: 240px;
+  width: 220px;
 }
 
 .input-field i,
@@ -712,7 +712,7 @@ figcaption {
 
 input,
 textarea {
-  width: 240px;
+  width: 220px;
   border: 2px solid #ccc;
   padding: 6px 8px;
   font-family: inherit;
@@ -733,8 +733,8 @@ textarea:focus {
   position: relative;
   left: 88px;
   color: #d9d9d9;
-   background-color: seagreen;
-  width: 236px;
+  background-color: seagreen;
+  width: 216px;
   border: none;
   border-radius: var(--border-radius);
   cursor: pointer;
